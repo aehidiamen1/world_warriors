@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class HowToPlayMenuButtonManager : MonoBehaviour
 {
-    [SerializeField] MainMenuButtonManager.HowToPlayButtons _buttonType;
+    [SerializeField] MainMenuManager.HowToPlayButtons _buttonType;
     public void ButtonClicked()
     {
-        MainMenuManager._.MainMenuButtonClicked(_buttonType);
+        MainMenuManager._.HowToPlayButtonClicked(_buttonType);
     }
 }

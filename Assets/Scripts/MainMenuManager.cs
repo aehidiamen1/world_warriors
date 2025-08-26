@@ -28,6 +28,11 @@ public class MainMenuManager : MonoBehaviour
             Debug.LogError("There are more than one MainMenuManagers in the scene");
         }
     }
+    public void Start()
+    {
+        //Opens the Main Menu
+        OpenMenu(_MainMenuContainer);
+    } 
 
     // Displaying a message when the button is clicked in the debug console
     public void MainMenuButtonClicked(MainMenuButtons buttonClicked)
@@ -39,8 +44,10 @@ public class MainMenuManager : MonoBehaviour
                 PlayClicked();
                 break;
             case MainMenuButtons.options:
+                OptionsClicked();
                 break;
             case MainMenuButtons.how_To_Play:
+                HowToPlayClicked();
                 break;
             case MainMenuButtons.quit:
                 QuitGame();
@@ -50,13 +57,13 @@ public class MainMenuManager : MonoBehaviour
                 break;
         }
     }
-    public void OpenHowToPlayMenu()
+    public void HowToPlayClicked()
     {
-
+        OpenMenu(_MainMenuContainer);
     }
-    public void OpenOptionsMenu()
+    public void OptionsClicked()
     {
-
+        OpenMenu(_OptionsMenuContainer);
     }
     public void ReturnToMainMenu()
     {
