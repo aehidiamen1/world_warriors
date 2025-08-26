@@ -8,6 +8,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private bool _debugMode;
     //Setting the possible values of the main menu buttons
     public enum MainMenuButtons { play, options, how_To_Play, quit };
+    public enum HowToPlayButtons { back };
+    public enum OptionsButtons { back };
     [SerializeField] private string _sceneToLoadAfterClickingPlay;
 
     // Method that unity calls when the screen starts up
@@ -42,6 +44,32 @@ public class MainMenuManager : MonoBehaviour
                 break;
             default:
                 Debug.Log("Button clicked that wasn't implemented in MainMenuManager Method");
+                break;
+        }
+    }
+    
+    public void ReturnToMainMenu()
+    {
+
+    }
+    //Method to run when the how_to_play button is clicked
+    public void HowToPlayButtonClicked(HowToPlayButtons buttonClicked)
+    {
+        //When the back button is clicked return to main menu
+        switch (buttonClicked)
+        {
+            case HowToPlayButtons.back:
+                ReturnToMainMenu();
+                break;
+        }
+    }
+    public void OptionsButtonsClicked(OptionsButtons buttonClicked)
+    {
+        //When the back button is clicked return to main menu
+        switch (buttonClicked)
+        {
+            case OptionsButtons.back:
+                ReturnToMainMenu();
                 break;
         }
     }
