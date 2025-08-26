@@ -10,6 +10,9 @@ public class MainMenuManager : MonoBehaviour
     public enum MainMenuButtons { play, options, how_To_Play, quit };
     public enum HowToPlayButtons { back };
     public enum OptionsButtons { back };
+    [SerializeField] GameObject _MainMenuContainer;
+    [SerializeField] GameObject _HowToPlayMenuContainer;
+    [SerializeField] GameObject _OptionsMenuContainer;
     [SerializeField] private string _sceneToLoadAfterClickingPlay;
 
     // Method that unity calls when the screen starts up
@@ -47,7 +50,14 @@ public class MainMenuManager : MonoBehaviour
                 break;
         }
     }
-    
+    public void OpenHowToPlayMenu()
+    {
+        
+    }
+    public void OpenOptionsMenu()
+    {
+        
+    }
     public void ReturnToMainMenu()
     {
 
