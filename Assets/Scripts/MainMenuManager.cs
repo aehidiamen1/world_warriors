@@ -67,7 +67,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ReturnToMainMenu()
     {
-
+        OpenMenu(_MainMenuContainer);
     }
     //Method to run when the how_to_play button is clicked
     public void HowToPlayButtonClicked(HowToPlayButtons buttonClicked)
