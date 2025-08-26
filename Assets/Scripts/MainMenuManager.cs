@@ -52,11 +52,11 @@ public class MainMenuManager : MonoBehaviour
     }
     public void OpenHowToPlayMenu()
     {
-        
+
     }
     public void OpenOptionsMenu()
     {
-        
+
     }
     public void ReturnToMainMenu()
     {
@@ -102,6 +102,15 @@ public class MainMenuManager : MonoBehaviour
 #else
             Application.Quit();
 #endif
+    }
+    public void OpenMenu(GameObject menuToOpen)
+    {
+        //Checks whether the menu to open is the Main Menu
+        _MainMenuContainer.SetActive(menuToOpen == _MainMenuContainer);
+        //Checks whether the menu to open is the How To Play Menu
+        _HowToPlayMenuContainer.SetActive(menuToOpen == _HowToPlayMenuContainer);
+        //Checks whether the menu to open is the Options Menu
+        _OptionsMenuContainer.SetActive(menuToOpen == _OptionsMenuContainer);
     }
 }
  
