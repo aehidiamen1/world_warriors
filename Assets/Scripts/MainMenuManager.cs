@@ -59,7 +59,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void HowToPlayClicked()
     {
-        OpenMenu(_MainMenuContainer);
+        OpenMenu(_HowToPlayMenuContainer);
     }
     public void OptionsClicked()
     {

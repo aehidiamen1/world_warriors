@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 657834628}
   - component: {fileID: 657834627}
   - component: {fileID: 657834626}
+  - component: {fileID: 657834629}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -667,8 +668,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenuButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 657834629}
+        m_TargetAssemblyTypeName: OptionsMenuButtonManager, Assembly-CSharp
         m_MethodName: ButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -717,6 +718,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657834624}
   m_CullTransparentMesh: 1
+--- !u!114 &657834629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657834624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f282d7714a70d541b1f32fd35c521fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonType: 0
 --- !u!224 &659406235 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1432129349290820043, guid: 0aa261272b4f5b444b1aa89bdfb85b78, type: 3}
