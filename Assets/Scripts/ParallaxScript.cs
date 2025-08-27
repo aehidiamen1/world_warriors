@@ -1,22 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ParallaxScript : MonoBehaviour
 {
+    //Allows me to manually adjust the offset multiplier in unity
+    [SerializeField] private float offsetMultiplier;
+    //Controls the speed at which the object moves to the offset position
+    [SerializeField] private float smoothTime;
 
-    [SerializeField] private float parallaxEffectMultiplier;
-    private Transform cameraTransform;
-    private Vector3 lastCameraPosition;
+    private Vector3 startPosition;
+    private Vector3 velocity;
+
     private void Start()
     {
-        cameraTransform = Camera.main.transform;
-        lastCameraPosition = cameraTransform.position;
+        //Initial position of the layer
+        startPosition = transform.position;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        Vector3 movement = cameraTransform.position - lastCameraPosition;
-        transform.position += new Vector3(movement.x * parallaxEffectMultiplier, movement.y * parallaxEffectMultiplier, 0);
-        lastCameraPosition = cameraTransform.position;
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+
+        // Use the mouse position to adjust the offset for the parallax effect
+        Vector2 offset = Camera.main.ScreenToViewportPoint(mousePos);
+
+        // Move the layer towards the position offset based on the position of the mouse pointer
+        transform.position = Vector3.SmoothDamp(transform.position, startPosition + (Vector3)(offset * offsetMultiplier), ref velocity, smoothTime
+        );
     }
 }
