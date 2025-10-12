@@ -1,23 +1,33 @@
 using UnityEngine;
 
-public class Level1ParallaxBackgrounf : MonoBehaviour
+public class Level1ParallaxBackground : MonoBehaviour
 {
-    private float startPos;
+    private float startPos, length;
     public GameObject cam;
-    public float parallaxEffect; //Allows me to determine the speed at which the background moves relative to the camera
+    public float parallaxEffect; // The speed at which the background should move relative to the camera
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         startPos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        //Calculate distance that the background moves based of camera movement
-        float distance = cam.transform.position.x * parallaxEffect;
+        // Calculate distance background move based on cam movement
+        float distance = cam.transform.position.x * parallaxEffect; // move with cam || 1 won't move || 0.5 = half
+        float movement = cam.transform.position.x * (1 - parallaxEffect);
 
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
+
+        // If background has reached the end of its length adjust its position for infinite scrolling
+        if (movement > startPos + length)
+        {
+            startPos += length;
+        }
+        else if (movement < startPos - length)
+        {
+            startPos -= length;
+        }
     }
 }
