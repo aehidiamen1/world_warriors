@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class Chest : MonoBehaviour
-{private Animator animator;
+{
+    private Animator animator;
     private bool isOpened = false;
 
     void Start()
@@ -15,7 +16,6 @@ public class Chest : MonoBehaviour
         {
             isOpened = true;
             animator.SetTrigger("Open");
-            // Optional: play sound, spawn loot, etc.
         }
     }
 }
