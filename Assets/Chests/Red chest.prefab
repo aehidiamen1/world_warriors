@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 9153079852626031790}
   m_Layer: 0
   m_Name: Red chest
-  m_TagString: Untagged
+  m_TagString: Red chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707625835714854572
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 7f;
     public float climbSpeed = 3f;
     public float jumpOffForce = 5f;
-    
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -16,7 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnLadder = false;
     private float originalGravityScale;
 
+    public CoinManager CoinManager;
     private Vector2 movement;
+
+    public GameObject attackPoint;
+    public float radius;
+    public LayerMask enemies;
+    public float damage;
 
     void Start()
     {
@@ -54,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
         {
             //Runs the jumping off the ladder method
             JumpOffLadder();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("isAttacking", true);
         }
 
         // Update vertical velocity for fall animation
@@ -161,6 +172,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnLadder = true;
         }
+
+    //Checks if the player has interacted with a coin
+        if (collision.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            CoinManager.coinCount++;
+        }
     }
 
     // Checks if the player has left the ladder's box collider
@@ -174,5 +192,26 @@ public class PlayerMovement : MonoBehaviour
                 ExitClimbing();
             }
         }
+    }
+
+    public void attack()
+    {
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
+
+        foreach (Collider2D enemyGameObject in enemy)
+        {
+            Debug.Log("Hit enemy");
+            enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
+        }
+    }
+
+    public void endAttack()
+    {
+        animator.SetBool("isAttacking", false);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
     }
 }

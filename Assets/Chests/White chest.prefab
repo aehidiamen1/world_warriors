@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 707562995859781680}
   m_Layer: 0
   m_Name: White chest
-  m_TagString: Untagged
+  m_TagString: White chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,3 +173,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41d5828469c2f448da7b957aeb0d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CoinManager: {fileID: 0}
