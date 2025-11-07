@@ -1,78 +1,128 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 public class overworld_movement : MonoBehaviour
 {
-    public float speed = 5f;
-    public Collider2D pathCollider; 
-
-    private Rigidbody2D rb;
-    private Collider2D playerCollider;
-    private Vector2 movement;
+    [Header("Movement Settings")]
+    public float moveSpeed = 3f;
+    
+    [Header("Current State")]
+    public LevelNode currentNode;
+    private bool isMoving = false;
+    private List<Transform> currentPath;
+    private int waypointIndex = 0;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<Collider2D>();
-
-        if (pathCollider == null)
+        // Start at initial node
+        if (currentNode != null)
         {
-            Debug.LogError("Assign a pathCollider!");
+            transform.position = currentNode.transform.position;
         }
     }
 
     void Update()
     {
-        // Get input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement.Normalize(); // prevent faster diagonal movement
-    }
-
-    void FixedUpdate()
-    {
-        Vector2 newPosition = rb.position + movement * speed * Time.fixedDeltaTime;
-
-        // Temporarily move the collider to the new position
-        Vector2 delta = newPosition - rb.position;
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.useTriggers = false;
-        filter.SetLayerMask(LayerMask.GetMask("Default")); // or your path layer
-
-        Collider2D[] results = new Collider2D[1];
-        int count = playerCollider.Overlap(filter, results);
-
-        // Check if the new position would be outside the path
-        if (IsPositionInsidePath(newPosition))
+        if (isMoving)
         {
-            rb.MovePosition(newPosition);
+            MoveAlongPath();
+        }
+        else
+        {
+            HandleInput();
         }
     }
 
-    bool IsPositionInsidePath(Vector2 targetPos)
+    void HandleInput()
     {
-        // Save original position
-        Vector2 originalPos = rb.position;
+        string direction = null;
 
-        // Move temporarily
-        rb.position = targetPos;
-
-        // Check if the player collider is fully inside the path
-        Bounds playerBounds = playerCollider.bounds;
-        Vector3[] corners = new Vector3[4];
-        corners[0] = new Vector3(playerBounds.min.x, playerBounds.min.y);
-        corners[1] = new Vector3(playerBounds.max.x, playerBounds.min.y);
-        corners[2] = new Vector3(playerBounds.min.x, playerBounds.max.y);
-        corners[3] = new Vector3(playerBounds.max.x, playerBounds.max.y);
-
-        foreach (var corner in corners)
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (!pathCollider.OverlapPoint(corner))
-            {
-                rb.position = originalPos; // restore
-                return false; // at least one corner is outside
-            }
+            direction = "up";
+        }
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            direction = "down";
+        }
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            direction = "left";
+        }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            direction = "right";
         }
 
-        rb.position = originalPos; // restore
-        return true; // all corners are inside
+        if (direction != null)
+        {
+            TryMove(direction);
+        }
+    }
+
+    void TryMove(string direction)
+    {
+        LevelNode.PathConnection connection = currentNode.GetConnection(direction);
+        
+        if (connection != null)
+        {
+            StartMoving(connection);
+        }
+        else
+        {
+            Debug.Log("No path in that direction!");
+        }
+    }
+
+    void StartMoving(LevelNode.PathConnection connection)
+    {
+        isMoving = true;
+        currentPath = new List<Transform>(connection.waypoints);
+        currentPath.Add(connection.targetNode.transform); // Add destination
+        waypointIndex = 0;
+    }
+
+    void MoveAlongPath()
+    {
+        if (waypointIndex >= currentPath.Count)
+        {
+            // Reached destination
+            ReachedNode();
+            return;
+        }
+
+        Transform targetWaypoint = currentPath[waypointIndex];
+        transform.position = Vector2.MoveTowards(
+            transform.position, 
+            targetWaypoint.position, 
+            moveSpeed * Time.deltaTime
+        );
+
+        // Check if reached waypoint
+        if (Vector2.Distance(transform.position, targetWaypoint.position) < 0.01f)
+        {
+            waypointIndex++;
+        }
+    }
+
+    void ReachedNode()
+    {
+        isMoving = false;
+        
+        // Update current node to destination
+        LevelNode.PathConnection lastConnection = currentNode.GetConnection(GetLastDirection());
+        if (lastConnection != null)
+        {
+            currentNode = lastConnection.targetNode;
+            transform.position = currentNode.transform.position;
+            Debug.Log("Reached: " + currentNode.name);
+        }
+    }
+
+    string GetLastDirection()
+    {
+        // Helper to get the direction we just moved
+        // You might want to store this when starting movement
+        return "up"; // Placeholder - improve this
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b875d6a04e148b42a3a1aa7e2ef18fd
+guid: 27c02d35d7babbc4fa9d5be060d7a45b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2940143466193076192
-    second: Checkpoint flag (activated)_0
+      213: 6077745525437668979
+    second: pause menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkpoint flag (activated)_0
+      name: pause menu_0
       rect:
         serializedVersion: 2
-        x: 147
-        y: 200
-        width: 174
-        height: 302
+        x: 431
+        y: 560
+        width: 168
+        height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02040e458138237d0800000000000000
-      internalID: -2940143466193076192
+      spriteID: 37e9ee6aa5d785450800000000000000
+      internalID: 6077745525437668979
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8a132461e70659d4a9646b2938bc89c4
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Checkpoint flag (activated)_0: -2940143466193076192
+      pause menu_0: 6077745525437668979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

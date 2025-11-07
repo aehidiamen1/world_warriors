@@ -1,10 +1,46 @@
 fileFormatVersion: 2
-guid: 6b875d6a04e148b42a3a1aa7e2ef18fd
+guid: 4ee763a1c3bc53d4ea3752140e965a18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2940143466193076192
-    second: Checkpoint flag (activated)_0
+      213: 906529179025280964
+    second: Grasslands_level_node-removebg-preview_0
+  - first:
+      213: -2074464206852299839
+    second: Grasslands_level_node-removebg-preview_1
+  - first:
+      213: -2371007060450511225
+    second: Grasslands_level_node-removebg-preview_2
+  - first:
+      213: -3199196423815197710
+    second: Grasslands_level_node-removebg-preview_3
+  - first:
+      213: -1870406412448527028
+    second: Grasslands_level_node-removebg-preview_4
+  - first:
+      213: 3742144858235899557
+    second: Grasslands_level_node-removebg-preview_5
+  - first:
+      213: 8909426608573712816
+    second: Grasslands_level_node-removebg-preview_6
+  - first:
+      213: -3412488629346136479
+    second: Grasslands_level_node-removebg-preview_7
+  - first:
+      213: -38241504715331675
+    second: Grasslands_level_node-removebg-preview_8
+  - first:
+      213: -2146853694736573211
+    second: Grasslands_level_node-removebg-preview_9
+  - first:
+      213: -3346899511557889994
+    second: Grasslands_level_node-removebg-preview_10
+  - first:
+      213: 2061093509655939787
+    second: Grasslands_level_node-removebg-preview_11
+  - first:
+      213: 2755823774923264960
+    second: Grasslands_level_node-removebg-preview_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkpoint flag (activated)_0
+      name: Grasslands_level_node-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 147
-        y: 200
-        width: 174
-        height: 302
+        x: 0
+        y: 103
+        width: 408
+        height: 430
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02040e458138237d0800000000000000
-      internalID: -2940143466193076192
+      spriteID: 4cf045e3c73a49c00800000000000000
+      internalID: 906529179025280964
       vertices: []
       indices: 
       edges: []
@@ -125,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: feba6245a28dbc840b3c1fd7af48bb67
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +171,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Checkpoint flag (activated)_0: -2940143466193076192
+      Grasslands_level_node-removebg-preview_0: 906529179025280964
+      Grasslands_level_node-removebg-preview_1: -2074464206852299839
+      Grasslands_level_node-removebg-preview_10: -3346899511557889994
+      Grasslands_level_node-removebg-preview_11: 2061093509655939787
+      Grasslands_level_node-removebg-preview_12: 2755823774923264960
+      Grasslands_level_node-removebg-preview_2: -2371007060450511225
+      Grasslands_level_node-removebg-preview_3: -3199196423815197710
+      Grasslands_level_node-removebg-preview_4: -1870406412448527028
+      Grasslands_level_node-removebg-preview_5: 3742144858235899557
+      Grasslands_level_node-removebg-preview_6: 8909426608573712816
+      Grasslands_level_node-removebg-preview_7: -3412488629346136479
+      Grasslands_level_node-removebg-preview_8: -38241504715331675
+      Grasslands_level_node-removebg-preview_9: -2146853694736573211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
