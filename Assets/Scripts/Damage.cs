@@ -22,5 +22,12 @@ public class Damage : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().health -= damage;
         }
+
+        // Play hurt animation
+        Animator animator = other.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger("hurt");
+        }
     }
 }
