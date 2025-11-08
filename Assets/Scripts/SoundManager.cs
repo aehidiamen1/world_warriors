@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         //If there is no saved data from previous game session muted is set to false
-        if (PlayerPrefs.HasKey("muted"))
+        if (!PlayerPrefs.HasKey("muted"))
         {
             PlayerPrefs.SetInt("muted", 0);
             Load();
