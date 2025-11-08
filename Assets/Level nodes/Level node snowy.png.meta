@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 4d3aeeba81ed6e94a8cdfea644fa2b87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1564889350346993306
+    second: Level node snowy_0
+  - first:
+      213: -7605107175796715139
+    second: Level node snowy_1
+  - first:
+      213: -3576187489611888530
+    second: Level node snowy_2
+  - first:
+      213: 5963341850694896161
+    second: Level node snowy_3
+  - first:
+      213: 1038135344303653956
+    second: Level node snowy_4
+  - first:
+      213: 4961349409239403368
+    second: Level node snowy_5
+  - first:
+      213: 7474665080516305230
+    second: Level node snowy_6
+  - first:
+      213: -7281495251696511606
+    second: Level node snowy_7
+  - first:
+      213: 219100321869626883
+    second: Level node snowy_8
+  - first:
+      213: 705542307169198002
+    second: Level node snowy_9
+  - first:
+      213: 6598365320163774564
+    second: Level node snowy_10
+  - first:
+      213: 5544071190663848254
+    second: Level node snowy_11
+  - first:
+      213: -9082900883899626968
+    second: Level node snowy_12
+  - first:
+      213: 6158627580635983468
+    second: Level node snowy_13
+  - first:
+      213: -2381394088481288175
+    second: Level node snowy_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level node snowy_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 314
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e6930b29a97b510800000000000000
+      internalID: 1564889350346993306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 26
+        width: 500
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71dcd3315b357690800000000000000
+      internalID: -7605107175796715139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 305
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68cc77fc64de5ec0800000000000000
+      internalID: -3576187489611888530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_3
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 304
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ac3ec61db02c250800000000000000
+      internalID: 5963341850694896161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_4
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 251
+        width: 37
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4444ff96892386e00800000000000000
+      internalID: 1038135344303653956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_5
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 244
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b0f4850014ad440800000000000000
+      internalID: 4961349409239403368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 161
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41e03bc9485bb760800000000000000
+      internalID: 7474665080516305230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 172
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a859fe8c5aee2fa90800000000000000
+      internalID: -7281495251696511606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 155
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e7637f4966a0300800000000000000
+      internalID: 219100321869626883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 137
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf54d08df69ac900800000000000000
+      internalID: 705542307169198002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_10
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 133
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4605e9e8c4a129b50800000000000000
+      internalID: 6598365320163774564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 114
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31eef8cf5f70fc40800000000000000
+      internalID: 5544071190663848254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_12
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 93
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ac415f4cd03f180800000000000000
+      internalID: -9082900883899626968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_13
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 88
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e2bbf9727d77550800000000000000
+      internalID: 6158627580635983468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level node snowy_14
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 69
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1109bd591b693fed0800000000000000
+      internalID: -2381394088481288175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 45c5eedcde12fd242b0a8ee2824ed74f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level node snowy_0: 1564889350346993306
+      Level node snowy_1: -7605107175796715139
+      Level node snowy_10: 6598365320163774564
+      Level node snowy_11: 5544071190663848254
+      Level node snowy_12: -9082900883899626968
+      Level node snowy_13: 6158627580635983468
+      Level node snowy_14: -2381394088481288175
+      Level node snowy_2: -3576187489611888530
+      Level node snowy_3: 5963341850694896161
+      Level node snowy_4: 1038135344303653956
+      Level node snowy_5: 4961349409239403368
+      Level node snowy_6: 7474665080516305230
+      Level node snowy_7: -7281495251696511606
+      Level node snowy_8: 219100321869626883
+      Level node snowy_9: 705542307169198002
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
