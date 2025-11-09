@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 785419969982098006}
   - component: {fileID: 7318826966636294293}
   - component: {fileID: 6216047428711187447}
+  - component: {fileID: -909737933932063140}
   m_Layer: 6
   m_Name: Mushroom enemy
   m_TagString: Untagged
@@ -210,3 +211,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   health: 30
   currentHealth: 30
+--- !u!114 &-909737933932063140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970455507194892021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec035945a40b6544b309e208cb40892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damage
+  damage: 15

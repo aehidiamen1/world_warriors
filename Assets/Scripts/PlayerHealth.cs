@@ -11,7 +11,12 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        maxHealth = health;
+        // If health isn't set then set to maxHealth
+        if (health <= 0)
+        {
+            health = maxHealth;
+        }
+
         //Ensures that the starting health is within the set boundaries
         health = Mathf.Clamp(health, minHealth, maxHealth);
     }
@@ -21,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
     {
         //Restrict the health to min and max health
         health = Mathf.Clamp(health, minHealth, maxHealth);
-        //Restrict the fillAmount to the min health and max health
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0 ,1);
+        //Update the health bar
+        healthBar.fillAmount = health / maxHealth;
     }
 }
