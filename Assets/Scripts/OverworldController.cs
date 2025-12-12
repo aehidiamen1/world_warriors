@@ -4,16 +4,42 @@ using UnityEngine.SceneManagement;
 
 public class OverworldController : MonoBehaviour
 {
-    public Transform cursorTransform;       // Player cursor
-    public OverworldNode currentNode;       // Node player is standing on
+    public Transform cursorTransform;
+    public OverworldNode currentNode;
     public float moveSpeed = 5f;
 
     private bool isMoving = false;
+    private const string lastNode = "LastOverworldNode";
 
     void Start()
     {
-        if (cursorTransform != null && currentNode != null)
+        // Check if returning from a level
+        string savedNodeName = PlayerPrefs.GetString(lastNode, "");
+        
+        if (!string.IsNullOrEmpty(savedNodeName))
+        {
+            OverworldNode savedNode = FindNodeByName(savedNodeName);
+            if (savedNode != null)
+            {
+                currentNode = savedNode;
+                cursorTransform.position = currentNode.transform.position;
+            }
+            PlayerPrefs.DeleteKey(lastNode);
+        }
+        else if (cursorTransform != null && currentNode != null)
+        {
             cursorTransform.position = currentNode.transform.position;
+        }
+    }
+
+    OverworldNode FindNodeByName(string nodeName)
+    {
+        foreach (OverworldNode node in FindObjectsOfType<OverworldNode>())
+        {
+            if (node.name == nodeName)
+                return node;
+        }
+        return null;
     }
 
     void Update()
@@ -38,7 +64,8 @@ public class OverworldController : MonoBehaviour
         // Entering the level
         if (Input.GetKeyDown(KeyCode.Return) && currentNode.isLevel)
         {
-            Debug.Log("Enter Level: " + currentNode.name);
+            PlayerPrefs.SetString(lastNode, currentNode.name);
+            PlayerPrefs.Save();
             SceneManager.LoadScene(currentNode.levelSceneName);
         } 
     }
