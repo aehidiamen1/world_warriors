@@ -2,19 +2,27 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
+    private Inventory inventory;
     public int i;
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Use the persistent inventory instance instead of finding it each time
+        inventory = Inventory.instance;
+    }
+
     void Update()
     {
-        if (Inventory.isFull == null || i >= Inventory.isFull.Length)
+        // Make sure inventory exists before trying to use it
+        if (inventory == null)
         {
+            inventory = Inventory.instance;
             return;
         }
 
         if (transform.childCount <= 0)
         {
-            Inventory.isFull[i] = false;
+            inventory.isFull[i] = false;
         }
     }
     
@@ -23,11 +31,7 @@ public class Slot : MonoBehaviour
         // When the player clicks the red cross then the item currently in the inventory will be dropped
         foreach (Transform child in transform)
         {
-            Spawn spawnScript = child.GetComponent<Spawn>();
-            if (spawnScript != null)
-            {
-                spawnScript.SpawnDroppedItem();
-            }
+            child.GetComponent<Spawn>().SpawnDroppedItem();
             GameObject.Destroy(child.gameObject);
         }
     }

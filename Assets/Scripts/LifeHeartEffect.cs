@@ -14,6 +14,9 @@ public class LifeHeartEffect : MonoBehaviour
     // When the player clicks on the potion in their inventory
     public void Use()
     {
+        //Calls the method used to figure the game object to apply the effect to
+        FindPlayer();
+
         // Check if the player is already at maximum lives
         if (playerHealth.currentLives >= playerHealth.maxLives)
         {
@@ -28,6 +31,16 @@ public class LifeHeartEffect : MonoBehaviour
             playerHealth.UpdateLivesUI();
             // Destroy this heart object since it's been used
             Destroy(gameObject);
+        }
+    }
+
+    void FindPlayer()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            //Gets the players health so that it can be adjusted by the effect
+            playerHealth = playerObject.GetComponent<PlayerHealth>();
         }
     }
 }

@@ -15,6 +15,9 @@ public class HealthPotionEffect : MonoBehaviour
     // When the player clicks on the potion in their inventory
     public void Use()
     {
+        //Calls the method used to figure the game object to apply the effect to
+        FindPlayer();
+
         // Check if the player is already at max health
         if (playerHealth.health >= playerHealth.maxHealth)
         {            
@@ -28,6 +31,15 @@ public class HealthPotionEffect : MonoBehaviour
 
             // Destroy this potion since it's been used by the player
             Destroy(gameObject);                
+        }
+    }
+    void FindPlayer()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            //Gets the players health so that it can be adjusted by the effect
+            playerHealth = playerObject.GetComponent<PlayerHealth>();
         }
     }
 }
