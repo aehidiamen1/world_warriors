@@ -8,17 +8,10 @@ public class Spawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Get the postion of the player
+        //Get the position of the player
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+    
     public void SpawnDroppedItem()
     {
         // Drop the item a set postion away from the player
