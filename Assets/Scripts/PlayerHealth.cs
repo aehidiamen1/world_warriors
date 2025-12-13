@@ -7,9 +7,9 @@ public class PlayerHealth : MonoBehaviour
     public float minHealth;
     public float maxHealth;
     public Image healthBar;
-    public int lives = 3; // Number of lives the player starts with
-    public int maxLives = 3; // Maximum number of lives
-    private int currentLives;
+    public int lives = 3;
+    public int maxLives = 3;
+    public int currentLives;
     public Image[] lifeImages;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateLivesUI();
     }
 
-    void UpdateLivesUI()
+    public void UpdateLivesUI()
     {
         for (int i = 0; i < lifeImages.Length; i++)
         {

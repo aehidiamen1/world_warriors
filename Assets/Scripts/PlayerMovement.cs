@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public float radius;
     public LayerMask enemies;
     public float damage;
-
+    public bool isSpeedBoosted;
+    private float originalSpeed;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -213,5 +214,20 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
+    }
+
+    public System.Collections.IEnumerator SpeedBoost(float multiplier, float duration)
+    {
+        isSpeedBoosted = true;
+        // Save the player's current speed before changing it
+        originalSpeed = speed;
+        speed = originalSpeed * multiplier;
+        
+        // Wait for the set duration (10 seconds)
+        yield return new WaitForSeconds(duration);
+        //Change the player's speed back to the original
+        speed = originalSpeed;
+
+        isSpeedBoosted = false;
     }
 }

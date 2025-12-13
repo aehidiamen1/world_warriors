@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5098089720722044503
+--- !u!1 &8981491584274309352
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,53 +8,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7666241643030808122}
-  - component: {fileID: 7044364281788767772}
-  - component: {fileID: 2981208188048976714}
-  - component: {fileID: 4561386110837144971}
-  - component: {fileID: -1861379641146363281}
-  - component: {fileID: -4404955668520325}
+  - component: {fileID: 1969829049063245089}
+  - component: {fileID: 4038689471132301988}
+  - component: {fileID: 4496654811681184090}
+  - component: {fileID: 5615289620993732971}
+  - component: {fileID: 5096544372483130782}
+  - component: {fileID: 6768378471248970442}
   m_Layer: 5
-  m_Name: Big Health potion button
+  m_Name: Speed potion button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7666241643030808122
+--- !u!224 &1969829049063245089
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7044364281788767772
+--- !u!222 &4038689471132301988
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_CullTransparentMesh: 1
---- !u!114 &2981208188048976714
+--- !u!114 &4496654811681184090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7908486285938793913, guid: a5121e17e58a9b54eab63f6c1a7cb01e, type: 3}
+  m_Sprite: {fileID: 6213735384373753190, guid: a5121e17e58a9b54eab63f6c1a7cb01e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78,13 +78,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4561386110837144971
+--- !u!114 &5615289620993732971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -118,12 +118,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2981208188048976714}
+  m_TargetGraphic: {fileID: 4496654811681184090}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -4404955668520325}
-        m_TargetAssemblyTypeName: BigHealthPotionEffect, Assembly-CSharp
+      - m_Target: {fileID: 6768378471248970442}
+        m_TargetAssemblyTypeName: SpeedPotionEffect, Assembly-CSharp
         m_MethodName: Use
         m_Mode: 1
         m_Arguments:
@@ -134,29 +134,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-1861379641146363281
+--- !u!114 &5096544372483130782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b8888a1aa4df6d49b1b8a5ca305cdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  item: {fileID: 5132989126448202339, guid: 43447327c806db1449cf15e02e80a030, type: 3}
---- !u!114 &-4404955668520325
+  item: {fileID: 7618973936050884602, guid: 594a118d1e2d73141ab1b56e6a08819d, type: 3}
+--- !u!114 &6768378471248970442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098089720722044503}
+  m_GameObject: {fileID: 8981491584274309352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d338e942389ff54299e12222f45e903, type: 3}
+  m_Script: {fileID: 11500000, guid: 6352c571e698616438ce6b241bbe44c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  healthAmount: 20
+  speedMultiplier: 2
+  duration: 10
