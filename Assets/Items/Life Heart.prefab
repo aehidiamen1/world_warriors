@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemButton: {fileID: 0}
+  itemButton: {fileID: 1135212728812657359, guid: b8cc4df437414b1428315c571602ce69, type: 3}
 --- !u!58 &2216764678481122664
 CircleCollider2D:
   m_ObjectHideFlags: 0
