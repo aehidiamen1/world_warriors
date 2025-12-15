@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         //Launching the projectile
         if (Input.GetKeyDown(KeyCode.F))
         {
+            animator.SetTrigger("Shoot");
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
     }
