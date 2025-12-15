@@ -53,9 +53,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
 
         // Flip sprite left/right
-        if (movement.x != 0)
-            spriteRenderer.flipX = movement.x < 0;
-
+        if (movement.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Facing right
+        }
+        else if (movement.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Facing left
+        }
+        
         // Player is jumping either off a ladder or just jumping in general
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isClimbing)
         {
