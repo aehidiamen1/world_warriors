@@ -9,27 +9,14 @@ public class OverworldController : MonoBehaviour
     public float moveSpeed = 5f;
 
     private bool isMoving = false;
-    private const string lastNode = "LastOverworldNode";
 
     void Start()
-    {
-        // Check if returning from a level
-        string savedNodeName = PlayerPrefs.GetString(lastNode, "");
-        
-        if (!string.IsNullOrEmpty(savedNodeName))
-        {
-            OverworldNode savedNode = FindNodeByName(savedNodeName);
-            if (savedNode != null)
+    {       
+            // No saved node => new game, start at default start node
+            if (cursorTransform != null && currentNode != null)
             {
-                currentNode = savedNode;
                 cursorTransform.position = currentNode.transform.position;
             }
-            PlayerPrefs.DeleteKey(lastNode);
-        }
-        else if (cursorTransform != null && currentNode != null)
-        {
-            cursorTransform.position = currentNode.transform.position;
-        }
     }
 
     OverworldNode FindNodeByName(string nodeName)
@@ -64,11 +51,12 @@ public class OverworldController : MonoBehaviour
         // Entering the level
         if (Input.GetKeyDown(KeyCode.Return) && currentNode.isLevel)
         {
-            PlayerPrefs.SetString(lastNode, currentNode.name);
-            PlayerPrefs.Save();
+            Debug.Log("Enter Level: " + currentNode.name);
             SceneManager.LoadScene(currentNode.levelSceneName);
         } 
     }
+
+    
 
     IEnumerator MoveAlongPath(OverworldPath path, OverworldNode targetNode)
     {

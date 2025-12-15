@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     public float damage;
     public bool isSpeedBoosted;
     private float originalSpeed;
+
+    public ProjectileBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,6 +75,13 @@ public class PlayerMovement : MonoBehaviour
         // Update vertical velocity for fall animation
         animator.SetFloat("VelocityY", rb.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded);
+
+
+        //Launching the projectile
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+        }
     }
 
     void FixedUpdate()

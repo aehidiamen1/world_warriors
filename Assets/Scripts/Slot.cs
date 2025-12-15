@@ -5,21 +5,15 @@ public class Slot : MonoBehaviour
     private Inventory inventory;
     public int i;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Use the persistent inventory instance instead of finding it each time
-        inventory = Inventory.instance;
+        inventory = GameObject.FindGameObjectWithTag("Player"). GetComponent<Inventory>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Make sure inventory exists before trying to use it
-        if (inventory == null)
-        {
-            inventory = Inventory.instance;
-            return;
-        }
-
         if (transform.childCount <= 0)
         {
             inventory.isFull[i] = false;

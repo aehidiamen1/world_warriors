@@ -5,22 +5,16 @@ public class Pickup : MonoBehaviour
     private Inventory inventory;
     public GameObject itemButton;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Use the persistent inventory instance instead of finding it each time
-        inventory = Inventory.instance;
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Make sure inventory exists before trying to use it
-            if (inventory == null)
-            {
-                inventory = Inventory.instance;
-            }
-
             //Checking if the item can be added to the inventory
             for (int i = 0; i < inventory.slots.Length; i++)
             {
