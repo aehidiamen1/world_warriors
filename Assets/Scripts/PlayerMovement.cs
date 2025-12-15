@@ -87,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("Shoot");
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
     }
 
@@ -247,5 +246,10 @@ public class PlayerMovement : MonoBehaviour
         speed = originalSpeed;
 
         isSpeedBoosted = false;
+    }
+
+    public void SpawnProjectile()
+    {
+        Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
     }
 }
