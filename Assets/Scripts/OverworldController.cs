@@ -12,13 +12,14 @@ public class OverworldController : MonoBehaviour
 
     void Start()
     {       
-            // No saved node => new game, start at default start node
+            // Start at default start node if not returning from a level
             if (cursorTransform != null && currentNode != null)
             {
                 cursorTransform.position = currentNode.transform.position;
             }
     }
 
+    // Finds a node by its name in the scene
     OverworldNode FindNodeByName(string nodeName)
     {
         foreach (OverworldNode node in FindObjectsOfType<OverworldNode>())
@@ -29,6 +30,7 @@ public class OverworldController : MonoBehaviour
         return null;
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (isMoving) return;
@@ -37,6 +39,7 @@ public class OverworldController : MonoBehaviour
         {
             if (i >= currentNode.connectionKeys.Count) continue;
 
+            // Moving to connected node
             if (Input.GetKeyDown(currentNode.connectionKeys[i]))
             {
                 var targetNode = currentNode.connectedNodes[i];
@@ -57,7 +60,7 @@ public class OverworldController : MonoBehaviour
     }
 
     
-
+    // Coroutine to move the player icon along a specified path to the target node
     IEnumerator MoveAlongPath(OverworldPath path, OverworldNode targetNode)
     {
         isMoving = true;
@@ -87,6 +90,7 @@ public class OverworldController : MonoBehaviour
         float finalDistance = Vector3.Distance(finalStart, finalEnd);
         float finalT = 0f;
 
+        // Move to the final target node position
         while (finalT < 1f)
         {
             finalT += Time.deltaTime * moveSpeed / finalDistance;

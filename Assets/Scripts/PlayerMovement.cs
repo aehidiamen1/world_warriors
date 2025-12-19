@@ -29,14 +29,13 @@ public class PlayerMovement : MonoBehaviour
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
 
-    private Rigidbody2D platform;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         
+
         //Store original gravity so that it it can be changed
         originalGravityScale = rb.gravityScale;
     }
@@ -199,13 +198,6 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
             CoinManager.coinCount++;
         }
-
-        //Checks if the player is on a moving platform
-        if (collision.gameObject.CompareTag("Moving Platform"))
-        {
-            transform.parent = collision.transform;
-            platform = collision.gameObject.GetComponent<Rigidbody2D>();
-        }
     }
 
     // Checks if the player has left the ladder's box collider
@@ -218,12 +210,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 ExitClimbing();
             }
-        }
-        //Checks if the player has left the moving platform
-            if (collision.gameObject.CompareTag("Moving Platform"))
-        {
-            transform.parent = null;
-            platform = null;
         }
     }
 
