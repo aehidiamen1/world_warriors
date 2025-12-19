@@ -35,6 +35,20 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
     }
+
+    // Detect when projectile hits the enemy
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the object that hit the enemy is a projectile
+        if (collision.CompareTag("Projectile"))
+        {
+            // Destroy the projectile
+            Destroy(collision.gameObject);
+            //Reduce enemy health when hit
+            health -= 10;
+        }
+    }
+
     //Stop moving when the enemy dies
     private void Die()
         {

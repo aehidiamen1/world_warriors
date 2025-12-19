@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
 
+    private Rigidbody2D platform;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -102,6 +104,12 @@ public class PlayerMovement : MonoBehaviour
         {
             // Normal horizontal movement
             rb.linearVelocity = new Vector2(movement.x * speed, rb.linearVelocity.y);
+        }
+
+        //If the player is on a moving platform, make sure they move with it
+        if (platform)
+        {
+            rb.position += platform.linearVelocity * Time.fixedDeltaTime;
         }
     }
 
@@ -191,11 +199,19 @@ public class PlayerMovement : MonoBehaviour
             isOnLadder = true;
         }
 
-    //Checks if the player has interacted with a coin
+        //Checks if the player has interacted with a coin
         if (collision.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
             CoinManager.coinCount++;
+        }
+
+        //Checks if the player is on a moving platform
+        if (collision.gameObject.CompareTag("Moving Platform"))
+        {
+            transform.parent = collision.transform;
+            platform = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.gravityScale = 10;
         }
     }
 
@@ -209,6 +225,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 ExitClimbing();
             }
+
+            if (collision.gameObject.CompareTag("Moving Platform"))
+        {
+            transform.parent = null;
+            platform = null;
+            rb.gravityScale = originalGravityScale;
         }
     }
 
