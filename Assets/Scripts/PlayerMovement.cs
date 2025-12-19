@@ -105,12 +105,6 @@ public class PlayerMovement : MonoBehaviour
             // Normal horizontal movement
             rb.linearVelocity = new Vector2(movement.x * speed, rb.linearVelocity.y);
         }
-
-        //If the player is on a moving platform, make sure they move with it
-        if (platform)
-        {
-            rb.position += platform.linearVelocity * Time.fixedDeltaTime;
-        }
     }
 
     // Entering, exiting, climbing and moving on the ladder
@@ -211,7 +205,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.parent = collision.transform;
             platform = collision.gameObject.GetComponent<Rigidbody2D>();
-            rb.gravityScale = 10;
         }
     }
 
@@ -231,7 +224,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.parent = null;
             platform = null;
-            rb.gravityScale = originalGravityScale;
         }
     }
 
