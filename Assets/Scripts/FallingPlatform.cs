@@ -6,16 +6,13 @@ public class FallingPlatform : MonoBehaviour
     public float fallWait = 2f;
     public float  destroyWait = 1f;
 
-    public GameObject platformPrefab;
-    public float respawnDelay = 0f;
-
     bool isFalling;
     Rigidbody2D rb;
 
-    
-    private Vector2 startPos;
+    // Stored start state for respawn
+    private Vector3 startPos;
     private Quaternion startRot;
-    private RigidbodyType2D startBodyType; 
+    private RigidbodyType2D startBodyType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,39 +39,17 @@ public class FallingPlatform : MonoBehaviour
         yield return new WaitForSeconds(fallWait);
         //Make the platform fall
         rb.bodyType = RigidbodyType2D.Dynamic;
-        // Destroy this instance after a short delay so it falls away
-        Destroy(gameObject, destroyWait);
-        // Wait until the object is destroyed and optionally wait more before respawning
-        yield return new WaitForSeconds(destroyWait + respawnDelay);
-        
-        // Spawn a new platform at the original position
-        GameObject spawned = null;
-        
-        spawned = Instantiate(platformPrefab, startPos, startRot);
 
-        if (spawned != null)
-        {
-            // Ensure the spawned platform is reset to its original state
-            FallingPlatform newPlatform = spawned.GetComponent<FallingPlatform>();
-            if (newPlatform != null)
-            {
-                newPlatform.Respawn(startBodyType);
-            }
-        }
-    }
+        // Wait while the platform falls, then reset it back to start state
+        yield return new WaitForSeconds(destroyWait);
 
-    public void Respawn(RigidbodyType2D bodyType)
-    {
-        // Reset the platform's state
-        rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.bodyType = bodyType;
-        }
-        isFalling = false;
+        // Reset physics and transform back to the starting state
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.bodyType = startBodyType;
         transform.position = startPos;
         transform.rotation = startRot;
+
+        isFalling = false;
     }
 }
-

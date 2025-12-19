@@ -200,3 +200,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   fallWait: 1
   destroyWait: 0.7
+  platformPrefab: {fileID: 4217070428558509475}
+  respawnDelay: 1
