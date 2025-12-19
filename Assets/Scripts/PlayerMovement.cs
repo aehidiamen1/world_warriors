@@ -225,7 +225,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 ExitClimbing();
             }
-
+        }
+        //Checks if the player has left the moving platform
             if (collision.gameObject.CompareTag("Moving Platform"))
         {
             transform.parent = null;
