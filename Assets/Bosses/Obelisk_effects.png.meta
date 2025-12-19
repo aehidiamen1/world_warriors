@@ -301,9 +301,9 @@ TextureImporter:
       name: Obelisk_effects_32
       rect:
         serializedVersion: 2
-        x: 413
+        x: 406
         y: 10
-        width: 117
+        width: 119
         height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -367,7 +367,7 @@ TextureImporter:
       name: Obelisk_effects_35
       rect:
         serializedVersion: 2
-        x: 983
+        x: 985
         y: 10
         width: 119
         height: 370
