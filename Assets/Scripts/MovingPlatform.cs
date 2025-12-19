@@ -35,7 +35,14 @@ public class MovingPlatform : MonoBehaviour
     //When a player lands on the platform, make the player a child of the platform so they move together
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.transform.parent = transform;
+        //Check if the object colliding with the platform is the player
+        if (collision.collider.CompareTag("Player"))
+        {
+            if (transform.position.y < collision.transform.position.y-1.5f)
+            {
+                collision.transform.parent = transform;
+            }   
+        }
     }
 
     //When the player leaves the platform, remove the parent so they no longer move together
