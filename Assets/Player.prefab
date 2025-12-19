@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8884023488712917915}
   - component: {fileID: 8085440952982508278}
   - component: {fileID: 7362065273839460633}
+  - component: {fileID: 7296670671267988226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,7 +168,7 @@ MonoBehaviour:
   jumpForce: 5
   climbSpeed: 3
   jumpOffForce: 5
-  CoinManager: {fileID: 0}
+  CoinManager: {fileID: 4913516699396809568, guid: 1145196d7e496b9499a925f551956f9f, type: 3}
   attackPoint: {fileID: 1014007878819292509}
   radius: 0.5
   enemies:
@@ -281,6 +282,19 @@ MonoBehaviour:
   isFull: 00
   slots:
   - {fileID: 0}
+--- !u!114 &7296670671267988226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793916124504614691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890af42a5b169e8429ba5082154fed67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  fallThrough: 0
 --- !u!1 &7522617820936058641
 GameObject:
   m_ObjectHideFlags: 0

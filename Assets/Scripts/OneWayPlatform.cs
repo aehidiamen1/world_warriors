@@ -21,8 +21,11 @@ public class OneWayPlatform : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (playerControls == null)
+        {
             return;
-        if (playerControls != null && playerControls.fallThrough)
+        }
+        
+        if (playerControls.fallThrough)
         {
             platformEffector.rotationalOffset = 180f;
             playerControls = null;
