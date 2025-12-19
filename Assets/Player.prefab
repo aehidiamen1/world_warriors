@@ -165,10 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 5
+  jumpForce: 6
   climbSpeed: 3
   jumpOffForce: 5
-  CoinManager: {fileID: 4913516699396809568, guid: 1145196d7e496b9499a925f551956f9f, type: 3}
+  CoinManager: {fileID: 0}
   attackPoint: {fileID: 1014007878819292509}
   radius: 0.5
   enemies:

@@ -143,11 +143,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: Obelisk_1
       rect:
         serializedVersion: 2
-        x: 241
-        y: 12
+        x: 239
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: Obelisk_2
       rect:
         serializedVersion: 2
-        x: 431
-        y: 12
+        x: 429
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,11 +209,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 621
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,11 +231,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 811
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,11 +253,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1001
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,11 +275,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1191
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -297,11 +297,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1381
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -319,11 +319,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1571
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -341,11 +341,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1761
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,12 +362,12 @@ TextureImporter:
       name: Obelisk_10
       rect:
         serializedVersion: 2
-        x: 1951
-        y: 12
+        x: 1949
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -385,11 +385,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2141
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,12 +406,12 @@ TextureImporter:
       name: Obelisk_12
       rect:
         serializedVersion: 2
-        x: 2331
-        y: 12
+        x: 2329
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -429,11 +429,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2521
-        y: 12
+        y: 0
         width: 81
-        height: 206
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -450,7 +450,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f87a7b225d337f54fb87a488016d7134
     internalID: 0
     vertices: []
     indices: 
