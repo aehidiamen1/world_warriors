@@ -38,10 +38,8 @@ public class MovingPlatform : MonoBehaviour
         //Check if the object colliding with the platform is the player
         if (collision.collider.CompareTag("Player"))
         {
-            if (transform.position.y < collision.transform.position.y-1.5f)
-            {
-                collision.transform.parent = transform;
-            }   
+            if (transform.position.y < collision.transform.position.y-0.8f)
+                collision.transform.parent = transform;   
         }
     }
 
