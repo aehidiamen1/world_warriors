@@ -100,4 +100,12 @@ public class PlayerHealth : MonoBehaviour
     {
         CheckpointPos = pos;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeathZone"))
+        {
+            LoseLife();
+        }
+    }
 }
