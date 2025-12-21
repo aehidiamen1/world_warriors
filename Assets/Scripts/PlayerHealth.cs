@@ -103,8 +103,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Checks if the player has fallen into a death zone
         if (collision.CompareTag("DeathZone"))
         {
+            // Play death animation
+            Animator playerAnimator = collision.GetComponent<Animator>();
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetTrigger("death");
+            }
             LoseLife();
         }
     }
