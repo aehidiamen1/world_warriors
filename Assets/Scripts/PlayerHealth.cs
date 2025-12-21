@@ -7,13 +7,15 @@ public class PlayerHealth : MonoBehaviour
     public float minHealth;
     public float maxHealth;
     public Image healthBar;
-    public int lives = 3;
-    public int maxLives = 3;
-    public int currentLives;
+    public float lives = 3f;
+    public float maxLives = 3f;
+    public float currentLives;
     public Image[] lifeImages;
 
     [SerializeField]
     private FloatSO healthSO;
+    [SerializeField]
+    private FloatSO livesSO;
 
     //Set the starting position for respawn
     Vector2 CheckpointPos;
@@ -22,9 +24,10 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Set the initial value of lives
+        livesSO.Value = lives;
         CheckpointPos = transform.position;
-
-        currentLives = lives;
+        currentLives = livesSO.Value;
 
         // If health isn't set then set to maxHealth
         if (healthSO.Value <= 0)
@@ -55,7 +58,9 @@ public class PlayerHealth : MonoBehaviour
 
     void LoseLife()
     {
+        //Decrease lives by 1
         currentLives--;
+        livesSO.Value = currentLives;
         
         if (currentLives > 0)
         {
