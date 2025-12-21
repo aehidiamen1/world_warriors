@@ -52,6 +52,8 @@ public class PlayerHealth : MonoBehaviour
             LoseLife();
         }
 
+        livesSO.Value = currentLives;
+        
         //Update the health bar
         healthBar.fillAmount = healthSO.Value / maxHealth;
     }
