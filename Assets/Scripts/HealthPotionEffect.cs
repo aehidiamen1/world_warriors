@@ -15,7 +15,7 @@ public class HealthPotionEffect : MonoBehaviour
     // When the player clicks on the potion in their inventory
     public void Use()
     {
-        //Calls the method used to figure the game object to apply the effect to
+        //Calls the method used to select the game object to apply the effect to
         FindPlayer();
 
         // Ensure we have a player reference
@@ -28,7 +28,7 @@ public class HealthPotionEffect : MonoBehaviour
             return;
         }
 
-        // Add the health amount via the public API
+        // Add the health amount
         playerHealth.AddHealth(healthAmount);
 
         // Destroy this potion since it's been used by the player

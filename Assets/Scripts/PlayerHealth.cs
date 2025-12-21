@@ -126,7 +126,14 @@ public class PlayerHealth : MonoBehaviour
     // Returns the current health value
     public float GetHealth()
     {
-        return healthSO != null ? healthSO.Value : 0f;
+        if (healthSO != null)
+        {
+            return healthSO.Value;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 
     // Safely adds health and clamps to max
@@ -134,6 +141,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (healthSO == null) return;
         healthSO.Value = Mathf.Clamp(healthSO.Value + amount, minHealth, maxHealth);
+        Debug.Log("Health added. Current health: " + healthSO.Value);
         if (healthBar != null)
         {
             healthBar.fillAmount = healthSO.Value / maxHealth;
