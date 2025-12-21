@@ -267,6 +267,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  HealthSO: {fileID: 11400000, guid: c195b1b65ed2b1240b7e10a0d8e518b6, type: 2}
 --- !u!114 &7362065273839460633
 MonoBehaviour:
   m_ObjectHideFlags: 0

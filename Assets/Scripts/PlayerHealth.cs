@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health;
     public float minHealth;
     public float maxHealth;
     public Image healthBar;
@@ -14,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Image[] lifeImages;
 
     [SerializeField]
-    private FloatSO HealthSO;
+    private FloatSO healthSO;
 
     //Set the starting position for respawn
     Vector2 CheckpointPos;
@@ -28,13 +27,13 @@ public class PlayerHealth : MonoBehaviour
         currentLives = lives;
 
         // If health isn't set then set to maxHealth
-        if (HealthSO.Value <= 0)
+        if (healthSO.Value <= 0)
         {
-            HealthSO.Value = maxHealth;
+            healthSO.Value = maxHealth;
         }
 
         //Ensures that the starting health is within the set boundaries
-        HealthSO.Value = Mathf.Clamp(HealthSO.Value, minHealth, maxHealth);
+        healthSO.Value = Mathf.Clamp(healthSO.Value, minHealth, maxHealth);
 
         UpdateLivesUI();
     }
@@ -43,15 +42,15 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //Restrict the health to min and max health
-        HealthSO.Value = Mathf.Clamp(HealthSO.Value, minHealth, maxHealth);
+        healthSO.Value = Mathf.Clamp(healthSO.Value, minHealth, maxHealth);
 
-        if (HealthSO.Value <= minHealth && currentLives > 0)
+        if (healthSO.Value <= minHealth && currentLives > 0)
         {
             LoseLife();
         }
 
         //Update the health bar
-        healthBar.fillAmount = HealthSO.Value / maxHealth;
+        healthBar.fillAmount = healthSO.Value / maxHealth;
     }
 
     void LoseLife()
@@ -61,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentLives > 0)
         {
             // Restore health to full
-            HealthSO.Value = maxHealth;
+            healthSO.Value = maxHealth;
             Debug.Log("Life lost! Lives remaining: " + currentLives);
         }
         else
@@ -117,5 +116,10 @@ public class PlayerHealth : MonoBehaviour
             }
             LoseLife();
         }
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        healthSO.Value -= damageAmount;
     }
 }
