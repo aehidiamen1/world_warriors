@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour
     public int currentLives;
     public Image[] lifeImages;
 
+    [SerializeField]
+    private FloatSO HealthSO;
+
     //Set the starting position for respawn
     Vector2 CheckpointPos;
 
@@ -25,13 +28,13 @@ public class PlayerHealth : MonoBehaviour
         currentLives = lives;
 
         // If health isn't set then set to maxHealth
-        if (health <= 0)
+        if (HealthSO.Value <= 0)
         {
-            health = maxHealth;
+            HealthSO.Value = maxHealth;
         }
 
         //Ensures that the starting health is within the set boundaries
-        health = Mathf.Clamp(health, minHealth, maxHealth);
+        HealthSO.Value = Mathf.Clamp(HealthSO.Value, minHealth, maxHealth);
 
         UpdateLivesUI();
     }
@@ -40,15 +43,15 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //Restrict the health to min and max health
-        health = Mathf.Clamp(health, minHealth, maxHealth);
+        HealthSO.Value = Mathf.Clamp(HealthSO.Value, minHealth, maxHealth);
 
-        if (health <= minHealth && currentLives > 0)
+        if (HealthSO.Value <= minHealth && currentLives > 0)
         {
             LoseLife();
         }
 
         //Update the health bar
-        healthBar.fillAmount = health / maxHealth;
+        healthBar.fillAmount = HealthSO.Value / maxHealth;
     }
 
     void LoseLife()
@@ -58,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentLives > 0)
         {
             // Restore health to full
-            health = maxHealth;
+            HealthSO.Value = maxHealth;
             Debug.Log("Life lost! Lives remaining: " + currentLives);
         }
         else
