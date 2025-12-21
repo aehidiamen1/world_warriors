@@ -10,6 +10,9 @@ public class ResetGameValues : MonoBehaviour
     [SerializeField]
     private FloatSO healthSO;
 
+    [SerializeField]
+    private FloatSO livesSO;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -19,6 +22,7 @@ public class ResetGameValues : MonoBehaviour
         {
             coinCountSO.Value = 0;
             healthSO.Value = 0;
+            livesSO.Value = 0;
             hasRunOnce = true;
             Debug.Log("Game values reset.");
         }
