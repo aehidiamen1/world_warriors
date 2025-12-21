@@ -168,7 +168,7 @@ MonoBehaviour:
   jumpForce: 6
   climbSpeed: 3
   jumpOffForce: 5
-  CoinManager: {fileID: 0}
+  coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
   attackPoint: {fileID: 1014007878819292509}
   radius: 0.5
   enemies:

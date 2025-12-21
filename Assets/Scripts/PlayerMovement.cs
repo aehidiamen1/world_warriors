@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnLadder = false;
     private float originalGravityScale;
 
-    public CoinManager CoinManager;
+    [SerializeField]
+    private FloatSO coinCountSO;
     private Vector2 movement;
 
     public GameObject attackPoint;
@@ -196,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
-            CoinManager.coinCount++;
+            coinCountSO.Value++;
         }
     }
 

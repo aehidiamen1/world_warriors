@@ -4989,7 +4989,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784708936}
-  - component: {fileID: 784708937}
   m_Layer: 0
   m_Name: Player persistent data
   m_TagString: Untagged
@@ -5013,19 +5012,6 @@ Transform:
   - {fileID: 2141820987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &784708937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784708935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1309f0359a64f4db950579e45dea29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
-  objectIndex: 0
 --- !u!1 &788127260
 GameObject:
   m_ObjectHideFlags: 0
@@ -9516,7 +9502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0fcf2d5f3dfbf46945a588ff3359d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coinCount: 0
+  coinCountSO: {fileID: 0}
   coinText: {fileID: 2060874417}
 --- !u!4 &1403594320
 Transform:
@@ -15001,10 +14987,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6199498217069619289, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: CoinManager
-      value: 
-      objectReference: {fileID: 1403594319}
     - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
       propertyPath: 'slots.Array.data[0]'
       value: 

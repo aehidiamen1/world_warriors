@@ -4,7 +4,8 @@ public class Chest : MonoBehaviour
 {
     private Animator animator;
     private bool isOpened = false;
-    public CoinManager CoinManager;
+    [SerializeField]
+    private FloatSO coinCountSO;
 
     void Start()
     {
@@ -19,19 +20,19 @@ public class Chest : MonoBehaviour
             animator.SetTrigger("Open");
             if (CompareTag("BrownChest"))
             {
-                CoinManager.coinCount += 10;
+                coinCountSO.Value += 10;
             }
             else if (CompareTag("BlackChest"))
             {
-                CoinManager.coinCount += 20;
+                coinCountSO.Value += 20;
             }
             else if (CompareTag("RedChest"))
             {
-                CoinManager.coinCount += 30;
+                coinCountSO.Value += 30;
             }
             else if (CompareTag("WhiteChest"))
             {                 
-                CoinManager.coinCount += 40;
+                coinCountSO.Value += 40;
             }
         }
     }
