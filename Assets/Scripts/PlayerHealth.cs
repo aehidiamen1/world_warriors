@@ -14,13 +14,13 @@ public class PlayerHealth : MonoBehaviour
     public Image[] lifeImages;
 
     //Set the starting position for respawn
-    Vector2 startPos;
+    Vector2 CheckpointPos;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos = transform.position;
+        CheckpointPos = transform.position;
 
         currentLives = lives;
 
@@ -93,6 +93,11 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator Respawn(float delay)
     {
         yield return new WaitForSeconds(delay);
-        transform.position = startPos;
+        transform.position = CheckpointPos;
+    }
+
+    public void UpdateCheckpoint(Vector2 pos)
+    {
+        CheckpointPos = pos;
     }
 }

@@ -7,6 +7,11 @@ public class Checkpoint : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isActivated = false;
 
+    PlayerHealth playerHealth;
+    private void Awake()
+    {   
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +23,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (!isActivated && other.CompareTag("Player"))
         {
+            playerHealth.UpdateCheckpoint(transform.position);
             isActivated = true;
             spriteRenderer.sprite = coloredSprite;
             Debug.Log("Checkpoint activated!");
