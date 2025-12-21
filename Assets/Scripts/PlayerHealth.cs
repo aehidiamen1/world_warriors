@@ -122,4 +122,21 @@ public class PlayerHealth : MonoBehaviour
     {
         healthSO.Value -= damageAmount;
     }
+
+    // Returns the current health value
+    public float GetHealth()
+    {
+        return healthSO != null ? healthSO.Value : 0f;
+    }
+
+    // Safely adds health and clamps to max
+    public void AddHealth(float amount)
+    {
+        if (healthSO == null) return;
+        healthSO.Value = Mathf.Clamp(healthSO.Value + amount, minHealth, maxHealth);
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = healthSO.Value / maxHealth;
+        }
+    }
 }

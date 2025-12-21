@@ -18,20 +18,21 @@ public class HealthPotionEffect : MonoBehaviour
         //Calls the method used to figure the game object to apply the effect to
         FindPlayer();
 
+        // Ensure we have a player reference
+        if (playerHealth == null) return;
+
         // Check if the player is already at max health
-        if (playerHealth.health >= playerHealth.maxHealth)
-        {            
+        if (playerHealth.GetHealth() >= playerHealth.maxHealth)
+        {
             // Exit the method early without destroying the potion
             return;
         }
-        else
-        {
-            // Add the health amount directly to the player's health
-            playerHealth.health += healthAmount;
 
-            // Destroy this potion since it's been used by the player
-            Destroy(gameObject);                
-        }
+        // Add the health amount via the public API
+        playerHealth.AddHealth(healthAmount);
+
+        // Destroy this potion since it's been used by the player
+        Destroy(gameObject);
     }
     void FindPlayer()
     {
