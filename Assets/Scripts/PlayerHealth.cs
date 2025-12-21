@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +13,15 @@ public class PlayerHealth : MonoBehaviour
     public int currentLives;
     public Image[] lifeImages;
 
+    //Set the starting position for respawn
+    Vector2 startPos;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        startPos = transform.position;
+
         currentLives = lives;
 
         // If health isn't set then set to maxHealth
@@ -60,6 +67,10 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Game Over! No lives remaining.");
         }
 
+        // Respawn the player at the starting position
+
+        StartCoroutine(Respawn(0.5f));
+
         UpdateLivesUI();
     }
 
@@ -77,5 +88,11 @@ public class PlayerHealth : MonoBehaviour
                 lifeImages[i].enabled = false;
             }
         }
+    }
+
+    IEnumerator Respawn(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        transform.position = startPos;
     }
 }

@@ -2222,7 +2222,7 @@ MonoBehaviour:
   - {fileID: 1194684694}
   connectionKeys: 12010000
   isLevel: 1
-  levelSceneName: 
+  levelSceneName: Boss level
 --- !u!212 &528536963
 SpriteRenderer:
   m_ObjectHideFlags: 0

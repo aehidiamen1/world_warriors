@@ -198,7 +198,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fa9e29689236841beeedba09de41be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fallWait: 1
-  destroyWait: 0.7
-  platformPrefab: {fileID: 4217070428558509475}
-  respawnDelay: 1
+  fallWait: 0.5
+  destroyWait: 1

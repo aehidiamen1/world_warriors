@@ -10,7 +10,7 @@ public class FallingPlatform : MonoBehaviour
     Rigidbody2D rb;
 
     // Stored start state for respawn
-    private Vector3 startPos;
+    private Vector2 startPos;
     private Quaternion startRot;
     private RigidbodyType2D startBodyType;
 
@@ -44,7 +44,7 @@ public class FallingPlatform : MonoBehaviour
         yield return new WaitForSeconds(destroyWait);
 
         // Reset physics and transform back to the starting state
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.bodyType = startBodyType;
         transform.position = startPos;
