@@ -18,17 +18,22 @@ public class Checkpoint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Set initial sprite to deactivated
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = greySprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Activate checkpoint when player touches it
         if (!isActivated && other.CompareTag("Player"))
         {
+            // Update player's respawn position
             playerHealth.UpdateCheckpoint(transform.position);
             isActivated = true;
+            //Change the sprite to the activated checkpoint
             spriteRenderer.sprite = coloredSprite;
+            // Disable the collider to prevent reactivation
             checkpointCollider.enabled = false;
             Debug.Log("Checkpoint activated!");
         }

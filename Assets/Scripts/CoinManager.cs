@@ -7,15 +7,11 @@ public class CoinManager : MonoBehaviour
     [SerializeField]
     private FloatSO coinCountSO;
     public TMP_Text coinText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        // Update the coin display text
         coinText.text = ": " + coinCountSO.Value.ToString();
     }
 }
