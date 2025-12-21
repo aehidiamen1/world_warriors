@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Respawn the player at the starting position
 
-        StartCoroutine(Respawn(0.5f));
+        StartCoroutine(Respawn(1f));
 
         UpdateLivesUI();
     }
@@ -107,7 +107,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.CompareTag("DeathZone"))
         {
             // Play death animation
-            Animator playerAnimator = collision.GetComponent<Animator>();
+            Animator playerAnimator = GetComponent<Animator>();
             if (playerAnimator != null)
             {
                 playerAnimator.SetTrigger("death");
