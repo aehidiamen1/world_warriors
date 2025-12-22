@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class ResetGameValues : MonoBehaviour
 {
-    private static bool hasRunOnce = false;
+    private static ResetGameValues instance;
     
     [SerializeField]
     private FloatSO coinCountSO;
-
     [SerializeField]
     private FloatSO healthSO;
-
     [SerializeField]
     private FloatSO livesSO;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    private void Awake()
     {
-        // Reset game values only once to prevent multiple resets in case
-        // the player returns to the main menu within the same session
-        if (hasRunOnce == false)
+        if (instance == null)
         {
-            coinCountSO.Value = 0;
-            healthSO.Value = 0;
-            livesSO.Value = 0;
-            hasRunOnce = true;
-            Debug.Log("Game values reset.");
+            instance = this;
+            ResetValues();
         }
+    }
+
+    private void ResetValues()
+    {
+        coinCountSO.Value = 0;
+        healthSO.Value = 0;
+        livesSO.Value = 0;
+        Debug.Log("Game values reset.");
     }
 }
