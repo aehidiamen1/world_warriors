@@ -18,10 +18,10 @@ public class Pickup : MonoBehaviour
             //Checking if the item can be added to the inventory
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.IsSlotFull(i) == false)
+                if (inventory.inventoryData.isFull[i] == false)
                 {
                     //Add item to inventory
-                    inventory.SetSlotFull(i, true);
+                    inventory.inventoryData.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;

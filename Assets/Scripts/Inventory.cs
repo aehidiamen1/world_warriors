@@ -2,25 +2,29 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField]
-    private ArraySO isFull;
-    [SerializeField]
+    public ArraySO inventoryData;
     public GameObject[] slots;
-    private bool[] runtimeValues;
 
-    private void Start()
+    public GameObject itemButtonPrefab;
+    
+    void Awake()
     {
-        // Create a runtime copy to use during Play Mode
-        runtimeValues = (bool[])isFull.Value.Clone();
+        // Initialize once
+        if (inventoryData == null || inventoryData.isFull.Length != slots.Length)
+        {
+            inventoryData.isFull = new bool[slots.Length];
+        }
     }
 
-    public bool IsSlotFull(int index)
+    
+    void Start()
     {
-        return runtimeValues[index];
-    }
-
-    public void SetSlotFull(int index, bool value)
-    {
-        runtimeValues[index] = value;
+        for (int i = 0; i < inventoryData.isFull.Length; i++)
+        {
+            if (inventoryData.isFull[i] && slots[i].transform.childCount == 0)
+            {
+                Instantiate(itemButtonPrefab, slots[i].transform, false);
+            }
+        }
     }
 }

@@ -280,9 +280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4d6b13a1f377c4e8a8e785ef85eb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  isFull: {fileID: 11400000, guid: 070b6df053aad6d4e81912a8067e99ba, type: 2}
+  inventoryData: {fileID: 11400000, guid: 070b6df053aad6d4e81912a8067e99ba, type: 2}
   slots:
   - {fileID: 0}
+  itemButtonPrefab: {fileID: 0}
 --- !u!114 &7296670671267988226
 MonoBehaviour:
   m_ObjectHideFlags: 0
