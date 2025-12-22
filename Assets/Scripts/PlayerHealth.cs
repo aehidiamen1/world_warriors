@@ -24,10 +24,14 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Set the initial value of lives
-        livesSO.Value = lives;
+        //If lives isn't set then set to original lives
+        if (livesSO.Value <= 0)
+        {
+            livesSO.Value = lives;
+            currentLives = livesSO.Value;
+        }
+        // Set the initial checkpoint position to the player's starting position
         CheckpointPos = transform.position;
-        currentLives = livesSO.Value;
 
         // If health isn't set then set to maxHealth
         if (healthSO.Value <= 0)

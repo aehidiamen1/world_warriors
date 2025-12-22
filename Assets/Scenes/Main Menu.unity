@@ -538,6 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResetGameValues
   coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
+  healthSO: {fileID: 11400000, guid: c195b1b65ed2b1240b7e10a0d8e518b6, type: 2}
+  livesSO: {fileID: 11400000, guid: 3c634f231a0185a489c72f96b17457c9, type: 2}
 --- !u!4 &239495139
 Transform:
   m_ObjectHideFlags: 0
