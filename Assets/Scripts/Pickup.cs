@@ -4,6 +4,7 @@ public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
+    public ItemData itemData;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,11 +19,10 @@ public class Pickup : MonoBehaviour
             //Checking if the item can be added to the inventory
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.inventoryData.isFull[i] == false)
+                if (inventory.inventoryData.items[i] == null)
                 {
-                    //Add item to inventory
-                    inventory.inventoryData.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false);
+                    inventory.inventoryData.items[i] = itemData; // store the item
+                    Instantiate(itemData.itemPrefab, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;
                 }

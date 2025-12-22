@@ -5,25 +5,23 @@ public class Inventory : MonoBehaviour
     public ArraySO inventoryData;
     public GameObject[] slots;
 
-    public GameObject itemButtonPrefab;
-    
     void Awake()
     {
         // Initialize once
-        if (inventoryData == null || inventoryData.isFull.Length != slots.Length)
+        if (inventoryData.items == null)
         {
-            inventoryData.isFull = new bool[slots.Length];
+            inventoryData.items = new ItemData[slots.Length];
         }
     }
 
     
     void Start()
     {
-        for (int i = 0; i < inventoryData.isFull.Length; i++)
+        for (int i = 0; i < inventoryData.items.Length; i++)
         {
-            if (inventoryData.isFull[i] && slots[i].transform.childCount == 0)
+            if (inventoryData.items[i] != null && slots[i].transform.childCount == 0)
             {
-                Instantiate(itemButtonPrefab, slots[i].transform, false);
+                Instantiate(inventoryData.items[i].itemPrefab, slots[i].transform, false);
             }
         }
     }

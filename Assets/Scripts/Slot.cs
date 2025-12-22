@@ -14,9 +14,9 @@ public class Slot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.childCount <= 0)
+        if (transform.childCount == 0 && inventory.inventoryData.items[i] != null)
         {
-            inventory.inventoryData.isFull[i] = false;
+            inventory.inventoryData.items[i] = null;
         }
     }
     
@@ -28,7 +28,7 @@ public class Slot : MonoBehaviour
             child.GetComponent<Spawn>().SpawnDroppedItem();
             GameObject.Destroy(child.gameObject);
         }
-        
-        inventory.inventoryData.isFull[i] = false;
+
+        inventory.inventoryData.items[i] = null;
     }
 }
