@@ -28,5 +28,7 @@ public class Slot : MonoBehaviour
             child.GetComponent<Spawn>().SpawnDroppedItem();
             GameObject.Destroy(child.gameObject);
         }
+
+        inventory.SetSlotFull(i, false);
     }
 }
