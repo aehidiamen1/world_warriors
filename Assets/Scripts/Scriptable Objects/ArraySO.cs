@@ -10,8 +10,8 @@ public class ArraySO : ScriptableObject
     {
         get { return _values; }
         set { _values = value; }
-    }   
-
+    } 
+    
     public bool GetValue(int index)
     {
         if (_values != null && index >= 0 && index < _values.Length)
