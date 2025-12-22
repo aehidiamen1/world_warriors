@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2985995477694501850}
   - component: {fileID: 56991598623045523}
   - component: {fileID: 4420606885588028280}
-  - component: {fileID: 7292441615347835085}
   m_Layer: 0
   m_Name: Speed Potion
   m_TagString: Untagged
@@ -105,9 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemData:
-    itemName: 
-    itemPrefab: {fileID: 0}
+  itemButton: {fileID: 8981491584274309352, guid: 97725899a2c880848b65f429103e6aeb, type: 3}
 --- !u!58 &4420606885588028280
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,18 +141,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.05
---- !u!114 &7292441615347835085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7618973936050884602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemData:
-    itemName: Speed Potion
-    itemPrefab: {fileID: 7618973936050884602}

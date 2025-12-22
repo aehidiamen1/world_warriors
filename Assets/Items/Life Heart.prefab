@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1200578829208211245}
   - component: {fileID: 4028334374502031041}
   - component: {fileID: 2216764678481122664}
-  - component: {fileID: 1206873018807501263}
   m_Layer: 0
   m_Name: Life Heart
   m_TagString: Untagged
@@ -105,9 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemData:
-    itemName: 
-    itemPrefab: {fileID: 0}
+  itemButton: {fileID: 1135212728812657359, guid: b8cc4df437414b1428315c571602ce69, type: 3}
 --- !u!58 &2216764678481122664
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,18 +141,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.00000047683716}
   m_Radius: 0.6
---- !u!114 &1206873018807501263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5221249846272306377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemData:
-    itemName: Life Heart
-    itemPrefab: {fileID: 5221249846272306377}

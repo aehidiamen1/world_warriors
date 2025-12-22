@@ -3,7 +3,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
-    public ItemData itemData;
+    public GameObject itemButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +18,11 @@ public class Pickup : MonoBehaviour
             //Checking if the item can be added to the inventory
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.inventoryData.items[i] == null)
+                if (inventory.isFull[i] == false)
                 {
-                    inventory.inventoryData.items[i] = itemData; // store the item
-                    Instantiate(itemData.itemPrefab, inventory.slots[i].transform, false);
+                    //Add item to inventory
+                    inventory.isFull[i] = true;
+                    Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
                     break;
                 }
