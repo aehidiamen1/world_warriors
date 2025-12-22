@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7272652459815080214}
   - component: {fileID: 3991786569431700566}
   - component: {fileID: 4897006387690843796}
+  - component: {fileID: -9064377155644326328}
   m_Layer: 0
   m_Name: Small Health potion
   m_TagString: Untagged
@@ -104,7 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  itemButton: {fileID: 3572186772629862745, guid: 95604b2d35c2ccd40b924a78a2f39881, type: 3}
+  itemData:
+    itemName: 
+    itemPrefab: {fileID: 0}
 --- !u!60 &4897006387690843796
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -159,3 +162,18 @@ PolygonCollider2D:
       - {x: 0.030935168, y: 0.074111834}
       - {x: -0.08168229, y: -0.035141125}
   m_UseDelaunayMesh: 0
+--- !u!114 &-9064377155644326328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763976650307993140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88941e5df0ca1e049afea08579d5c07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickup
+  itemData:
+    itemName: Small Health Potion
+    itemPrefab: {fileID: 2763976650307993140}
