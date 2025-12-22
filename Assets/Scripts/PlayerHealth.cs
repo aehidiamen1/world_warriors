@@ -30,6 +30,11 @@ public class PlayerHealth : MonoBehaviour
             livesSO.Value = lives;
             currentLives = livesSO.Value;
         }
+        else
+        {
+            currentLives = livesSO.Value;
+        }
+        
         // Set the initial checkpoint position to the player's starting position
         CheckpointPos = transform.position;
 
