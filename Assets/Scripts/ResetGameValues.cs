@@ -11,7 +11,8 @@ public class ResetGameValues : MonoBehaviour
     private FloatSO healthSO;
     [SerializeField]
     private FloatSO livesSO;
-    
+    [SerializeField]
+    private ArraySO inventoryData;
     private void Awake()
     {
         if (instance == null)
@@ -28,6 +29,7 @@ public class ResetGameValues : MonoBehaviour
             coinCountSO.Value = 0;
             healthSO.Value = 0;
             livesSO.Value = 0;
+            inventoryData.ClearAll();
             hasReset = true;
             Debug.Log("Game values reset.");
         }
