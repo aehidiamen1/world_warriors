@@ -3,7 +3,6 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
-    public GameObject itemButton;
     public ItemData itemData;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
