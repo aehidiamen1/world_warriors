@@ -3,6 +3,7 @@ using UnityEngine;
 public class ResetGameValues : MonoBehaviour
 {
     private static ResetGameValues instance;
+    private static bool hasReset = false;
     
     [SerializeField]
     private FloatSO coinCountSO;
@@ -22,9 +23,17 @@ public class ResetGameValues : MonoBehaviour
 
     private void ResetValues()
     {
-        coinCountSO.Value = 0;
-        healthSO.Value = 0;
-        livesSO.Value = 0;
-        Debug.Log("Game values reset.");
+        if (!hasReset)
+        {
+            coinCountSO.Value = 0;
+            healthSO.Value = 0;
+            livesSO.Value = 0;
+            hasReset = true;
+            Debug.Log("Game values reset.");
+        }
+        else
+        {
+            Debug.Log("Game values have already been reset. Skipping reset.");
+        }
     }
 }
