@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour
 
     void Update()
     {
+        // If the slot is empty, clear its data in the inventory
         if (transform.childCount <= 0)
         {
             inventory.inventoryData.ClearSlot(i);
@@ -20,6 +21,7 @@ public class Slot : MonoBehaviour
     
     public void DropItem()
     {
+        // When the red cross is clicked the item is dropped
         foreach (Transform child in transform)
         {
             child.GetComponent<Spawn>().SpawnDroppedItem();

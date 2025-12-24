@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     
     void Start()
     {
-        inventoryData.Initialize(slots.Length);
+        inventoryData.SetUpArray(slots.Length);
         RestoreInventory();
     }
     
@@ -28,6 +28,7 @@ public class Inventory : MonoBehaviour
         Invoke(nameof(FindSlotsAndRestore), 0.1f);
     }
     
+    // Finds all of the slot components in the scene and restores the items in them
     void FindSlotsAndRestore()
     {
         Slot[] slotComponents = FindObjectsByType<Slot>(FindObjectsSortMode.None);

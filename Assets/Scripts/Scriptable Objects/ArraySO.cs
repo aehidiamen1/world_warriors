@@ -6,7 +6,8 @@ public class ArraySO : ScriptableObject
     public bool[] isFull;
     public GameObject[] storedItemPrefabs;
     
-    public void Initialize(int slotCount)
+    //Sets up the arrays based on inventory size
+    public void SetUpArray(int slotCount)
     {
         if (isFull == null || isFull.Length != slotCount)
         {
@@ -15,18 +16,21 @@ public class ArraySO : ScriptableObject
         }
     }
     
+    // Stores a powerup in the inventory slot
     public void StoreItem(int slotIndex, GameObject itemPrefab)
     {
         storedItemPrefabs[slotIndex] = itemPrefab;
         isFull[slotIndex] = true;
     }
     
+    // Clears the data stored in a specific slot
     public void ClearSlot(int slotIndex)
     {
         storedItemPrefabs[slotIndex] = null;
         isFull[slotIndex] = false;
     }
     
+    // Clears the contents of the entire inventory
     public void ClearAll()
     {
         for (int i = 0; i < isFull.Length; i++)

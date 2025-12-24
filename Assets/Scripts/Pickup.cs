@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
         {
             Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             
+            // Store the item in the first available slot
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.inventoryData.isFull[i] == false)
