@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossFightTeleport : MonoBehaviour
 {
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private bool portalActive = false;
     private bool portalSpawned = false;
     private bool appear = false;
@@ -12,9 +13,10 @@ public class BossFightTeleport : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
         // Hide the portal initially
-        gameObject.SetActive(false);
+        if (spriteRenderer != null) spriteRenderer.enabled = false;
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class BossFightTeleport : MonoBehaviour
 
     private void ActivatePortal()
     {
-        gameObject.SetActive(true);
+        if (spriteRenderer != null) spriteRenderer.enabled = true;
         
         if (animator != null)
         {
