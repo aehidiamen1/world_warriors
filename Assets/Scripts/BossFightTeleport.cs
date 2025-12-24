@@ -54,10 +54,9 @@ public class BossFightTeleport : MonoBehaviour
         if (spriteRenderer != null) spriteRenderer.enabled = true;
         
 
-        if (animator != null)
+        if (animator != null && spriteRenderer.enabled == true)
         {
             animator.SetTrigger("Appear");
-            appear = true;
         }
     }
 
