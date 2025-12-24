@@ -5,6 +5,8 @@ public class ObeliskActivator : MonoBehaviour
     private Animator animator;
     private bool activated = false;
 
+    public bool IsActivated => activated;
+
     void Start()
     {
         animator = GetComponent<Animator>();
