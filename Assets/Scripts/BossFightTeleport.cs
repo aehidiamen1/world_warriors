@@ -3,10 +3,8 @@ using UnityEngine;
 public class BossFightTeleport : MonoBehaviour
 {
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private bool portalActive = false;
+    private SpriteRenderer spriteRenderer;              
     private bool portalSpawned = false;
-    private bool appear = false;
     
     public ObeliskActivator[] obelisks;
 
@@ -51,6 +49,7 @@ public class BossFightTeleport : MonoBehaviour
 
     private void ActivatePortal()
     {
+        Debug.Log("All obelisks activated! Spawning portal...");
         if (spriteRenderer != null) spriteRenderer.enabled = true;
         
 
