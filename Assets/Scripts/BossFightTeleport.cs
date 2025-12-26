@@ -66,4 +66,6 @@ public class BossFightTeleport : MonoBehaviour
             animator.SetTrigger("Idle");
         }
     }
+
+    
 }
