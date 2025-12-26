@@ -96,5 +96,8 @@
             {
                 playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
+
+            // Destroy the portal after spawning the player
+            Destroy(gameObject, 0.5f);
         }
     }
