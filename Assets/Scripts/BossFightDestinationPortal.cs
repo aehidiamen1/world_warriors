@@ -5,6 +5,7 @@ public class BossFightDestinationPortal : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;              
     private SpriteRenderer playerSprite;
+    private Rigidbody2D playerRigidbody;
 
     void Start()
     {
@@ -23,6 +24,15 @@ public class BossFightDestinationPortal : MonoBehaviour
         if (!collision.CompareTag("Player"))
         {
             return;
+        }
+
+        playerRigidbody = collision.GetComponent<Rigidbody2D>();
+        
+        // Stop player movement and freeze them in place
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.linearVelocity = Vector2.zero;
+            playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         playerSprite = collision.GetComponent<SpriteRenderer>();
@@ -60,10 +70,17 @@ public class BossFightDestinationPortal : MonoBehaviour
 
     public void SpawnPlayerFromPortal()
     {
+        // Make player visible when spawned from the portal
         if (playerSprite != null)
         {
             Debug.Log("Spawning player from portal");
             playerSprite.enabled = true;
+        }
+
+        // Unfreeze player movement
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }
