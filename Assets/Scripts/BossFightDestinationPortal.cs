@@ -78,6 +78,12 @@
 
         public void SpawnPlayerFromPortal()
         {
+            // Checks if player is inside the portal before executing
+            if (playerSprite == null || playerMovement == null || playerRigidbody == null)
+            {
+                return;
+            }
+            
             // Make player visible when spawned from the portal
             if (playerSprite != null)
             {
@@ -98,6 +104,6 @@
             }
 
             // Destroy the portal after spawning the player
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 1f);
         }
     }

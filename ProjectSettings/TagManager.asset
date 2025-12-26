@@ -13,6 +13,7 @@ TagManager:
   - Projectile
   - MovingPlatform
   - DeathZone
+  - Teleporter
   layers:
   - Default
   - TransparentFX
