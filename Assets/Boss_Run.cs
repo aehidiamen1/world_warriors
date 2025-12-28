@@ -16,7 +16,7 @@ public class Boss_Run : StateMachineBehaviour
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
         
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+        if (BossArena.playerInArena && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Melee Attack");
         }
@@ -25,6 +25,11 @@ public class Boss_Run : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (!BossArena.playerInArena)
+        {
+            return;
+        }
+        
         animator.GetComponent<Boss>().LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, rb.position.y);
