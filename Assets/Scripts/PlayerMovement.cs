@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        attackEffect.enabled = false;
         
 
         //Store original gravity so that it it can be changed
