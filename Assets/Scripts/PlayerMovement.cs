@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject attackPoint;
     public float radius;
+    public SpriteRenderer attackEffect;
+
     public LayerMask enemies;
     public float damage;
     public bool isSpeedBoosted;
@@ -216,6 +218,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void attack()
     {
+        attackEffect.enabled = true;
+        
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
 
         foreach (Collider2D enemyGameObject in enemy)

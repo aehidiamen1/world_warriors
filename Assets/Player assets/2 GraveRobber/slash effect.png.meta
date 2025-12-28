@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 0fd5eee72976e9245bb3b8e13c4fd2cf
+guid: 707be00e152121f499bd9398f4fa5154
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2864516320443489798
-    second: GraveRobber_attack1_0
+      213: -6843252296817351359
+    second: slash effect_0
   - first:
-      213: -4557018752806375212
-    second: GraveRobber_attack1_1
+      213: 2302944782647763328
+    second: slash effect_1
   - first:
-      213: -2956725262159379523
-    second: GraveRobber_attack1_2
+      213: -3719602122719128032
+    second: slash effect_2
   - first:
-      213: -5072338036205609861
-    second: GraveRobber_attack1_3
-  - first:
-      213: 32725560429275957
-    second: GraveRobber_attack1_4
-  - first:
-      213: 7581161988436231811
-    second: GraveRobber_attack1_5
+      213: -460868668929629496
+    second: slash effect_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GraveRobber_attack1_0
+      name: slash effect_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 29
-        height: 43
+        x: 290
+        y: 20
+        width: 150
+        height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af128aa55913f38d0800000000000000
-      internalID: -2864516320443489798
+      spriteID: 14563db0b42e701a0800000000000000
+      internalID: -6843252296817351359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GraveRobber_attack1_1
+      name: slash effect_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 0
-        width: 29
-        height: 43
+        x: 1188
+        y: 145
+        width: 36
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,118 +146,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d0be24a69732c0c0800000000000000
-      internalID: -4557018752806375212
+      spriteID: 0812f0b0414b5ff10800000000000000
+      internalID: 2302944782647763328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GraveRobber_attack1_2
+      name: slash effect_2
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 29
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db3019a1a0a97f6d0800000000000000
-      internalID: -2956725262159379523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GraveRobber_attack1_3
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 0
-        width: 29
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7c13433e6f6b99b0800000000000000
-      internalID: -5072338036205609861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GraveRobber_attack1_4
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 29
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53b667c49b3447000800000000000000
-      internalID: 32725560429275957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GraveRobber_attack1_5
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 0
-        width: 29
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3868f6969a2b53960800000000000000
-      internalID: 7581161988436231811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GraveRobber_attack1_6
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 12
+        x: 1210
+        y: 20
         width: 14
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4883721}
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7652a7b13bfc45d46a3c9ac2bf4c1c1d
-      internalID: -957587571
+      spriteID: 0269981a391516cc0800000000000000
+      internalID: -3719602122719128032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash effect_3
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 11
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2a75c236aaa99f0800000000000000
+      internalID: -460868668929629496
       vertices: []
       indices: 
       edges: []
@@ -272,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3082ec69e7739384c8011abb90459ca6
+    spriteID: 6181d39874e7b914cbfccd584a38e3c9
     internalID: 0
     vertices: []
     indices: 
@@ -282,13 +210,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GraveRobber_attack1_0: -2864516320443489798
-      GraveRobber_attack1_1: -4557018752806375212
-      GraveRobber_attack1_2: -2956725262159379523
-      GraveRobber_attack1_3: -5072338036205609861
-      GraveRobber_attack1_4: 32725560429275957
-      GraveRobber_attack1_5: 7581161988436231811
-      GraveRobber_attack1_6: -957587571
+      slash effect_0: -6843252296817351359
+      slash effect_1: 2302944782647763328
+      slash effect_2: -3719602122719128032
+      slash effect_3: -460868668929629496
+      slash effect_4: -1714783496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
