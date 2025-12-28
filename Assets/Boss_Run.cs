@@ -15,7 +15,7 @@ public class Boss_Run : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
-
+        
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Melee Attack");

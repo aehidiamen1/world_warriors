@@ -14910,33 +14910,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: inventorySO
-      value: 
-      objectReference: {fileID: 11400000, guid: 070b6df053aad6d4e81912a8067e99ba, type: 2}
-    - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: itemButtonPrefab
-      value: 
-      objectReference: {fileID: 8981491584274309352, guid: 97725899a2c880848b65f429103e6aeb, type: 3}
-    - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: isFull.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
       propertyPath: 'slots.Array.data[0]'
       value: 
       objectReference: {fileID: 1041128037}
-    - target: {fileID: 7362065273839460633, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: 'isFull.Array.data[1]'
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8085440952982508278, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: livesSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 3c634f231a0185a489c72f96b17457c9, type: 2}
-    - target: {fileID: 8085440952982508278, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
-      propertyPath: healthSO
-      value: 
-      objectReference: {fileID: 11400000, guid: c195b1b65ed2b1240b7e10a0d8e518b6, type: 2}
     - target: {fileID: 8085440952982508278, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
       propertyPath: healthBar
       value: 
