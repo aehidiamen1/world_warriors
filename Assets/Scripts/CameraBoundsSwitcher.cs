@@ -18,7 +18,7 @@ public class CameraBoundsSwitcher : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Switch to new bounds
+            // Switch to the other camera bounds
             confiner.BoundingShape2D = newBoundsCollider;
             confiner.InvalidateBoundingShapeCache();
         }
