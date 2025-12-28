@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject attackPoint;
     public float radius;
     public SpriteRenderer attackEffect;
+    public float effectDuration = 0.2f;
 
     public LayerMask enemies;
     public float damage;
@@ -218,8 +220,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void attack()
     {
-        attackEffect.enabled = true;
-        
+        StartCoroutine(ShowAttackEffect());
+
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
 
         foreach (Collider2D enemyGameObject in enemy)
@@ -227,6 +229,13 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Hit enemy");
             enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
         }
+    }
+
+    IEnumerator ShowAttackEffect()
+    {
+        attackEffect.enabled = true;
+        yield return new WaitForSeconds(effectDuration);
+        attackEffect.enabled = false;
     }
 
     public void endAttack()
@@ -239,7 +248,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
     }
 
-    public System.Collections.IEnumerator SpeedBoost(float multiplier, float duration)
+    public IEnumerator SpeedBoost(float multiplier, float duration)
     {
         isSpeedBoosted = true;
         // Save the player's current speed before changing it
