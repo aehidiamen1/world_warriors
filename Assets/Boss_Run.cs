@@ -15,11 +15,6 @@ public class Boss_Run : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
-        
-        if (BossArena.playerInArena && Vector2.Distance(player.position, rb.position) <= attackRange)
-        {
-            animator.SetTrigger("Melee Attack");
-        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,12 +24,17 @@ public class Boss_Run : StateMachineBehaviour
         {
             return;
         }
-        
+
         animator.GetComponent<Boss>().LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
+
+        if (BossArena.playerInArena && Vector2.Distance(player.position, rb.position) <= attackRange)
+        {
+            animator.SetTrigger("Melee Attack");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
