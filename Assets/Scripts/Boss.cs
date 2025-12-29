@@ -8,7 +8,7 @@ public class Boss : MonoBehaviour
 
     public float meleeDamage = 10f;
     public Transform attackPoint;
-    public float attackRadius = 1.5f;
+    public float attackRadius = 0.8f;
 
     public void LookAtPlayer()
     {
@@ -38,14 +38,7 @@ public class Boss : MonoBehaviour
         // Deal damage to player if hit
         foreach (Collider2D hit in hits)
         {
-            // Ensure we are hitting the player's collider
-            CapsuleCollider2D playerCollider = hit as CapsuleCollider2D;
-            if (playerCollider == null)
-            {
-                continue;
-            }
-
-            PlayerHealth playerHealth = playerCollider.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
 
             if (playerHealth != null)
             {
