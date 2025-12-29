@@ -7,7 +7,7 @@ public class BossTrigger : MonoBehaviour
 
     private bool activated = false;
 
-    private void start ()
+    void Start()
     {
         if (bossAnimator != null)
         {
