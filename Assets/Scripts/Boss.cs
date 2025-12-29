@@ -6,6 +6,9 @@ public class Boss : MonoBehaviour
 
     public bool isFlipped = false;
 
+    public float meleeDamage = 10f;
+    public float meleeReachDistance = 2f;
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
@@ -24,5 +27,28 @@ public class Boss : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }
+
+    public void DealMeleeDamage()
+    {
+        // Calculate how far away the player is
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        
+        // If player is close enough, hit them
+        if (distanceToPlayer <= meleeReachDistance)
+        {
+            Debug.Log("Boss melee attack hit the player!");
+            player.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
+        }
+        else
+        {
+            Debug.Log("Boss melee attack missed the player!");
+        }
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        // Draw melee reach distance in editor
+        Gizmos.DrawWireSphere(transform.position, meleeReachDistance);
     }
 }
