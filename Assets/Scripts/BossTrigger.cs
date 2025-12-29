@@ -7,6 +7,18 @@ public class BossTrigger : MonoBehaviour
 
     private bool activated = false;
 
+    private void start ()
+    {
+        if (bossAnimator != null)
+        {
+            bossAnimator.enabled = false;
+        }
+
+        if (bossScript != null)
+        {
+            bossScript.enabled = false;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (activated)
