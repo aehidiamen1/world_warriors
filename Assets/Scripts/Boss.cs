@@ -7,7 +7,8 @@ public class Boss : MonoBehaviour
     public bool isFlipped = false;
 
     public float meleeDamage = 10f;
-    public float meleeReachDistance = 2f;
+    public Transform attackPoint;
+    public float attackRadius = 1.5f;
 
     public void LookAtPlayer()
     {
@@ -31,24 +32,25 @@ public class Boss : MonoBehaviour
 
     public void DealMeleeDamage()
     {
-        // Calculate how far away the player is
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        
-        // If player is close enough, hit them
-        if (distanceToPlayer <= meleeReachDistance)
+        // Check if player is in attack range
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
+
+        // Deal damage to player if hit
+        foreach (Collider2D hit in hits)
         {
-            Debug.Log("Boss melee attack hit the player!");
-            player.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
-        }
-        else
-        {
-            Debug.Log("Boss melee attack missed the player!");
+            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                Debug.Log("Boss melee attack hit the player!");
+                playerHealth.TakeDamage(meleeDamage);
+            }
         }
     }
     
     void OnDrawGizmosSelected()
     {
         // Draw melee reach distance in editor
-        Gizmos.DrawWireSphere(transform.position, meleeReachDistance);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 }
