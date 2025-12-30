@@ -10,6 +10,34 @@ public class Boss : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius = 0.8f;
 
+    public Animator animator;
+
+    public float maxHealth = 100f;
+    public float currentHealth;
+
+    public float AirAttackActivation = 50f;
+    public Transform skyPoint;
+    public GameObject projectilePrefab;
+    public int projectileAmount = 16;
+    public float projectileSpeed = 6f;
+
+    private void Awake()
+    {
+        // Set the boss health
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        // Reduce health of the boss if damaged by the player
+        currentHealth -= damage;
+        Debug.Log("Boss damaged, reducing health");
+
+        if (currentHealth <= AirAttackActivation)
+        {
+            animator.SetTrigger("AirAttack");
+        }
+    }
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
@@ -45,6 +73,28 @@ public class Boss : MonoBehaviour
                 Debug.Log("Boss melee attack hit the player!");
                 playerHealth.TakeDamage(meleeDamage);
             }
+        }
+    }
+
+    public void ShootProjectilesRadially()
+    {
+        float startAngle = 180f;
+        float endAngle = 360f;
+        float angleStep = (endAngle - startAngle) / (projectileAmount - 1);
+        float angle = startAngle;
+
+        for (int i = 0; i < projectileAmount; i++)
+        {
+            float directionInX = Mathf.Cos(angle * Mathf.Deg2Rad);
+            float directionInY = Mathf.Sin(angle * Mathf.Deg2Rad);
+
+            Vector2 shootdirection = new Vector2(directionInX, directionInY).normalized;
+
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.GetComponent<BossProjectile>().direction = shootdirection;
+            projectile.GetComponent<BossProjectile>().speed = projectileSpeed;
+
+            angle += angleStep;
         }
     }
     
