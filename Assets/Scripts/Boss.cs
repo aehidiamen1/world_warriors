@@ -34,6 +34,7 @@ public class Boss : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("Boss damaged, reducing health");
 
+        // Trigger air attack if health drops below a set amount
         if (!hasTriggeredAirAttack && currentHealth <= AirAttackActivation)
         {
             hasTriggeredAirAttack = true;
@@ -106,8 +107,13 @@ public class Boss : MonoBehaviour
             Vector2 shootdirection = new Vector2(directionInX, directionInY).normalized;
 
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.GetComponent<BossProjectile>().direction = shootdirection;
-            projectile.GetComponent<BossProjectile>().speed = projectileSpeed;
+            BossProjectile bossProjectile = projectile.GetComponent<BossProjectile>();
+            
+            if (bossProjectile != null)
+            {
+                bossProjectile.direction = shootdirection;
+                bossProjectile.speed = projectileSpeed;
+            }
 
             angle += angleStep;
         }

@@ -22,7 +22,7 @@ public class BossProjectile : MonoBehaviour
         {
             // Deal damage to the player
             player.TakeDamage(damage);
-        }
+        } 
 
         //Destroy the projectile on impact with any gameobject
     }
