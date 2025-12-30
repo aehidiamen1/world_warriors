@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
     public float attackRadius = 0.8f;
 
     public Animator animator;
+    public bool hasTriggeredAirAttack = false;
 
     public float maxHealth = 100f;
     public float currentHealth;
@@ -33,11 +34,25 @@ public class Boss : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("Boss damaged, reducing health");
 
-        if (currentHealth <= AirAttackActivation)
+        if (!hasTriggeredAirAttack && currentHealth <= AirAttackActivation)
         {
+            hasTriggeredAirAttack = true;
             animator.SetTrigger("AirAttack");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the object that hit the enemy is a projectile
+        if (collision.CompareTag("Projectile"))
+        {
+            // Destroy the projectile
+            Destroy(collision.gameObject);
+            //Reduce enemy health when hit
+            currentHealth -= 10;
+        }
+    }
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;

@@ -10,7 +10,7 @@ public class Boss_AirAttack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       boss = animator.GetComponent<Boss>();
+        boss = animator.GetComponent<Boss>();
         rb = animator.GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
     }

@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
 
+    public Boss boss;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -227,8 +229,19 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemyGameObject in enemy)
         {
-            Debug.Log("Hit enemy");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= damage;
+            EnemyHealth enemyHealth = enemyGameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                //Deal damage to enemy
+                enemyHealth.health -= damage;
+            }
+
+            Boss boss = enemyGameObject.GetComponent<Boss>();
+            if (boss != null)
+            {
+                //Deal damage to boss
+                boss.TakeDamage(damage);
+            }
         }
     }
 

@@ -25,6 +25,5 @@ public class BossProjectile : MonoBehaviour
         }
 
         //Destroy the projectile on impact with any gameobject
-        Destroy(gameObject);
     }
 }

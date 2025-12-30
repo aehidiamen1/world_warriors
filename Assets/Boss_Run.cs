@@ -25,6 +25,13 @@ public class Boss_Run : StateMachineBehaviour
             return;
         }
 
+        Boss boss = animator.GetComponent<Boss>();
+        if (!boss.hasTriggeredAirAttack && boss.currentHealth <= boss.AirAttackActivation)
+        {
+            animator.SetTrigger("AirAttack");
+            return;
+        }
+
         animator.GetComponent<Boss>().LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, rb.position.y);
