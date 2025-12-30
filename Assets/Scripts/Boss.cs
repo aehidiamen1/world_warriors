@@ -94,29 +94,49 @@ public class Boss : MonoBehaviour
 
     public void ShootProjectilesRadially()
     {
+        Debug.Log("=== SHOOTING PROJECTILES ===");
+
+        if (projectilePrefab == null)
+        {
+            Debug.LogError("Projectile prefab is NULL!");
+            return;
+        }
+
+        // 180 degrees = left, 270 = down, 360 = right
         float startAngle = 180f;
         float endAngle = 360f;
-        float angleStep = (endAngle - startAngle) / (projectileAmount - 1);
-        float angle = startAngle;
-
+        
         for (int i = 0; i < projectileAmount; i++)
         {
-            float directionInX = Mathf.Cos(angle * Mathf.Deg2Rad);
-            float directionInY = Mathf.Sin(angle * Mathf.Deg2Rad);
-
-            Vector2 shootdirection = new Vector2(directionInX, directionInY).normalized;
-
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            BossProjectile bossProjectile = projectile.GetComponent<BossProjectile>();
+            // Calculate angle
+            float t = i / (float)(projectileAmount - 1);
+            float angle = Mathf.Lerp(startAngle, endAngle, t);
+            float angleRad = angle * Mathf.Deg2Rad;
             
-            if (bossProjectile != null)
+            // Calculate direction
+            Vector2 direction = new Vector2(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
+            
+            // Spawn offset to avoid boss collider
+            Vector3 spawnPos = transform.position + (Vector3)(direction * 1f);
+            
+            // Create projectile
+            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+            
+            // Initialize it
+            BossProjectile projScript = proj.GetComponent<BossProjectile>();
+            if (projScript != null)
             {
-                bossProjectile.direction = shootdirection;
-                bossProjectile.speed = projectileSpeed;
+                projScript.Initialize(direction, projectileSpeed);
             }
-
-            angle += angleStep;
+            else
+            {
+                Debug.LogError("No BossProjectile script on prefab!");
+            }
+            
+            Debug.Log($"Shot projectile {i}: angle={angle}°, dir={direction}");
         }
+        
+        Debug.Log("=== DONE SHOOTING ===");
     }
     
     void OnDrawGizmosSelected()
