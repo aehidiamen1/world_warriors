@@ -25,7 +25,8 @@ public class Boss : MonoBehaviour
     public float projectileSpeed = 6f;
 
     public Vector2 startAirAttackPosition;
-
+    public bool shouldDescend = false;
+    
     private void Awake()
     {
         // Set the boss health
@@ -128,6 +129,12 @@ public class Boss : MonoBehaviour
             }
         }
     }
+
+    public void StartDescending()
+    {
+        shouldDescend = true;
+    }
+
     
     void OnDrawGizmosSelected()
     {

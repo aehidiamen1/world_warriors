@@ -6,29 +6,53 @@ public class Boss_AirAttack : StateMachineBehaviour
 
     Boss boss;
     Rigidbody2D rb;
+    
+    bool hasReachedSkyPoint = false;
 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss = animator.GetComponent<Boss>();
         rb = animator.GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
+        
         boss.startAirAttackPosition = rb.position;
+        
+        hasReachedSkyPoint = false;
+        boss.shouldDescend = false; 
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector2 target = boss.skyPoint.position;
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime);
-        rb.MovePosition(newPos);
+        //Boss goes to sky point
+        if (!hasReachedSkyPoint)
+        {
+            Vector2 target = boss.skyPoint.position;
+            Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.deltaTime);
+            rb.MovePosition(newPos);
+            
+            // Check if the boss has the air attack point
+            if (Vector2.Distance(rb.position, target) < 0.1f)
+            {
+                hasReachedSkyPoint = true;
+                Debug.Log("Reached sky point!");
+            }
+        }
+        //Boss returns to ground
+        else if (boss.shouldDescend)
+        {
+            Vector2 newPos = Vector2.MoveTowards(rb.position, boss.startAirAttackPosition, moveSpeed * Time.deltaTime);
+            rb.MovePosition(newPos);
+            
+            // Check if the boss has returned to the ground
+            if (Vector2.Distance(rb.position, boss.startAirAttackPosition) < 0.1f)
+            {
+                Debug.Log("Returned to ground position!");
+            }
+        }
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector2 newPos = Vector2.MoveTowards(rb.position, boss.startAirAttackPosition, moveSpeed * Time.deltaTime);
-        rb.MovePosition(newPos);
-        Debug.Log("Returning to ground!");
+        
     }
 }
