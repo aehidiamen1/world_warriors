@@ -48,5 +48,6 @@ public class Boss_Run : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Melee Attack");
+        animator.ResetTrigger("AirAttack");
     }
 }
