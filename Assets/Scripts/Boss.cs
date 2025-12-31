@@ -81,7 +81,7 @@ public class Boss : MonoBehaviour
             {
                 Debug.Log("Boss melee attack hit the player!");
                 playerHealth.TakeDamage(meleeDamage);
-                Animator playerAnimator = GetComponent<Animator>();
+                Animator playerAnimator = hit.GetComponent<Animator>();
                 if (playerAnimator != null)
                 {
                     playerAnimator.SetTrigger("hurt");

@@ -39,7 +39,7 @@ public class BossProjectile : MonoBehaviour
         if (player != null)
         {
             player.TakeDamage(damage);
-            Animator playerAnimator = GetComponent<Animator>();
+            Animator playerAnimator = collision.GetComponent<Animator>();
             if (playerAnimator != null)
             {
                 playerAnimator.SetTrigger("hurt");
