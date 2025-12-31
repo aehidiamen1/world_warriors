@@ -14,7 +14,7 @@ public class BossProjectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    public void Initialize(Vector2 dir, float spd)
+    public void SetupProjectile(Vector2 dir, float spd)
     {
         direction = dir.normalized;
         speed = spd;
@@ -22,8 +22,6 @@ public class BossProjectile : MonoBehaviour
         // Rotate the projectile to face the direction it's moving
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        
-        Debug.Log("Projectile initialized - Direction: " + direction + " Speed: " + speed + " Angle: " + angle);
     }
 
     private void Update()
@@ -43,5 +41,8 @@ public class BossProjectile : MonoBehaviour
             player.TakeDamage(damage);
             Destroy(gameObject);
         }
+
+        // Destroy if it moves to far away
+        Destroy(gameObject, 10f);
     }
 }

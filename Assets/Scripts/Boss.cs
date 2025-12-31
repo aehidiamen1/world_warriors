@@ -94,15 +94,12 @@ public class Boss : MonoBehaviour
 
     public void ShootProjectilesRadially()
     {
-        Debug.Log("=== SHOOTING PROJECTILES ===");
-
         if (projectilePrefab == null)
         {
-            Debug.LogError("Projectile prefab is NULL!");
+            Debug.LogError("Projectile prefab is missing");
             return;
         }
 
-        // 180 degrees = left, 270 = down, 360 = right
         float startAngle = 180f;
         float endAngle = 360f;
         
@@ -116,27 +113,18 @@ public class Boss : MonoBehaviour
             // Calculate direction
             Vector2 direction = new Vector2(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
             
-            // Spawn offset to avoid boss collider
+            // Spawn offset to prevent collision with the boss
             Vector3 spawnPos = transform.position + (Vector3)(direction * 1f);
             
             // Create projectile
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
             
-            // Initialize it
-            BossProjectile projScript = proj.GetComponent<BossProjectile>();
-            if (projScript != null)
+            BossProjectile projectile = proj.GetComponent<BossProjectile>();
+            if (projectile != null)
             {
-                projScript.Initialize(direction, projectileSpeed);
+                projectile.SetupProjectile(direction, projectileSpeed);
             }
-            else
-            {
-                Debug.LogError("No BossProjectile script on prefab!");
-            }
-            
-            Debug.Log($"Shot projectile {i}: angle={angle}°, dir={direction}");
         }
-        
-        Debug.Log("=== DONE SHOOTING ===");
     }
     
     void OnDrawGizmosSelected()
