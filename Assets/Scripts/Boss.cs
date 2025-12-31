@@ -33,13 +33,6 @@ public class Boss : MonoBehaviour
         // Reduce health of the boss if damaged by the player
         currentHealth -= damage;
         Debug.Log("Boss damaged, reducing health");
-
-        // Trigger air attack if health drops below a set amount
-        if (!hasTriggeredAirAttack && currentHealth <= AirAttackActivation)
-        {
-            hasTriggeredAirAttack = true;
-            animator.SetTrigger("AirAttack");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

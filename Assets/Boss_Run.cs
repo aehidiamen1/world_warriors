@@ -29,6 +29,7 @@ public class Boss_Run : StateMachineBehaviour
         if (!boss.hasTriggeredAirAttack && boss.currentHealth <= boss.AirAttackActivation)
         {
             animator.SetTrigger("AirAttack");
+            boss.hasTriggeredAirAttack = true;
             return;
         }
 
