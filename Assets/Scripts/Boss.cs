@@ -24,6 +24,8 @@ public class Boss : MonoBehaviour
     public int projectileAmount = 16;
     public float projectileSpeed = 6f;
 
+    public Vector2 startAirAttackPosition;
+
     private void Awake()
     {
         // Set the boss health
