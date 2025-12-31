@@ -26,7 +26,6 @@ public class BossProjectile : MonoBehaviour
 
     private void Update()
     {
-        // Simple transform movement - no physics
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
     }
 
