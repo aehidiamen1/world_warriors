@@ -12,11 +12,13 @@ public class Boss : MonoBehaviour
 
     public Animator animator;
     public bool hasTriggeredAirAttack = false;
+    public bool hasTriggeredSecondAirAttack = false;
 
     public float maxHealth = 100f;
     public float currentHealth;
 
     public float AirAttackActivation = 50f;
+    public float SecondAirAttackActivation = 25f;
     public Transform skyPoint;
     public GameObject projectilePrefab;
     public int projectileAmount = 16;
