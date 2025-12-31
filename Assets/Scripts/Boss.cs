@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Boss : MonoBehaviour
 {
@@ -26,11 +27,17 @@ public class Boss : MonoBehaviour
 
     public Vector2 startAirAttackPosition;
     public bool shouldDescend = false;
-    
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
     private void Awake()
     {
         // Set the boss health
         currentHealth = maxHealth;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     public void TakeDamage(float damage)
@@ -38,8 +45,16 @@ public class Boss : MonoBehaviour
         // Reduce health of the boss if damaged by the player
         currentHealth -= damage;
         Debug.Log("Boss damaged, reducing health");
+
+        StartCoroutine(FlashRed());
     }
 
+    IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = originalColor;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the object that hit the enemy is a projectile
