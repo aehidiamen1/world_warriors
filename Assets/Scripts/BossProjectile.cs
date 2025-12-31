@@ -4,13 +4,13 @@ public class BossProjectile : MonoBehaviour
 {
     public float damage = 10f;
     public float speed = 6f;
-    public float lifetime = 5f; // Destroy after 5 seconds
+    public float lifetime = 5f;
     
     private Vector2 direction;
 
     private void Start()
     {
-        // Auto-destroy after lifetime
+        //Destroy projectile after set time has passed
         Destroy(gameObject, lifetime);
     }
 
@@ -46,8 +46,5 @@ public class BossProjectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-
-        // Destroy if it moves to far away
-        Destroy(gameObject, 10f);
     }
 }
