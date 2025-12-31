@@ -20,6 +20,10 @@ public class PlayerHealth : MonoBehaviour
     //Set the starting position for respawn
     Vector2 CheckpointPos;
 
+    public GameOverScreen gameOverScreen;
+
+    private bool isDead;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,6 +63,13 @@ public class PlayerHealth : MonoBehaviour
         if (healthSO.Value <= minHealth && currentLives > 0)
         {
             LoseLife();
+        }
+        if (currentLives <= 0 && !isDead)
+        {
+            isDead = true;
+            // Load game over screen
+            Debug.Log("Game Over!");
+            gameOverScreen.GameOver();
         }
 
         livesSO.Value = currentLives;

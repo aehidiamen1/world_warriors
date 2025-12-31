@@ -13,6 +13,8 @@ public class ResetGameValues : MonoBehaviour
     private FloatSO livesSO;
     [SerializeField]
     private ArraySO inventoryData;
+
+    private GameOverScreen GameOverScreen;
     private void Awake()
     {
         if (instance == null)
@@ -32,6 +34,15 @@ public class ResetGameValues : MonoBehaviour
             inventoryData.ClearAll();
             hasReset = true;
             Debug.Log("Game values reset.");
+        }
+        else if (GameOverScreen.reset)
+        {
+            coinCountSO.Value = 0;
+            healthSO.Value = 0;
+            livesSO.Value = 0;
+            inventoryData.ClearAll();
+            GameOverScreen.reset = false;
+            Debug.Log("Game values reset on returning to main menu after game is over.");
         }
         else
         {
