@@ -64,6 +64,8 @@ public class Boss : MonoBehaviour
             Destroy(collision.gameObject);
             //Reduce enemy health when hit
             currentHealth -= 10;
+            
+            StartCoroutine(FlashRed());
         }
     }
 
