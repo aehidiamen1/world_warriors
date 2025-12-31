@@ -18,7 +18,9 @@ public class Boss_AirAttack : StateMachineBehaviour
         boss.startAirAttackPosition = rb.position;
         
         hasReachedSkyPoint = false;
-        boss.shouldDescend = false; 
+        boss.shouldDescend = false;
+
+        animator.SetBool("AirAttackComplete", false); 
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -47,6 +49,7 @@ public class Boss_AirAttack : StateMachineBehaviour
             if (Vector2.Distance(rb.position, boss.startAirAttackPosition) < 0.1f)
             {
                 Debug.Log("Returned to ground position!");
+                animator.SetBool("AirAttackComplete", true);
             }
         }
     }
