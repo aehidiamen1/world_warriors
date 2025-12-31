@@ -14,7 +14,6 @@ public class ResetGameValues : MonoBehaviour
     [SerializeField]
     private ArraySO inventoryData;
 
-    private GameOverScreen GameOverScreen;
     private void Awake()
     {
         if (instance == null)
