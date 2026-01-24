@@ -5659,7 +5659,9 @@ GameObject:
   m_Component:
   - component: {fileID: 676462851}
   - component: {fileID: 676462854}
-  - component: {fileID: 676462853}
+  - component: {fileID: 676462855}
+  - component: {fileID: 676462857}
+  - component: {fileID: 676462858}
   m_Layer: 5
   m_Name: Game Over Screen
   m_TagString: Untagged
@@ -5688,7 +5690,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &676462853
+--- !u!222 &676462854
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676462850}
+  m_CullTransparentMesh: 1
+--- !u!114 &676462855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5701,14 +5711,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1093513652023269745, guid: cde7b828b0d28a24c8be2fb794243ac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5718,14 +5728,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &676462854
-CanvasRenderer:
+--- !u!225 &676462857
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676462850}
-  m_CullTransparentMesh: 1
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &676462858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676462850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6126ff2761127e9409d3053cf3410e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasGroupFader
+  canvasGroup: {fileID: 676462857}
+  fadeDuration: 0.5
 --- !u!4 &679036223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3035285518430438796, guid: 71b4789c04f529a4e8d58718dba36545, type: 3}
@@ -15928,6 +15956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreen
   gameOverUI: {fileID: 676462850}
+  fader: {fileID: 676462858}
 --- !u!1001 &6650631065604330354
 PrefabInstance:
   m_ObjectHideFlags: 0

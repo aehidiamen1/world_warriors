@@ -3451,7 +3451,7 @@ Transform:
   m_GameObject: {fileID: 485615715}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.99, y: -3.09, z: -10}
+  m_LocalPosition: {x: -32.5, y: -3.09, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9725,7 +9725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreen
   gameOverUI: {fileID: 1625183252}
-  reset: 0
+  fader: {fileID: 1625183257}
 --- !u!4 &1411494732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8475588914473706022, guid: 1d3dadd8c251e2242aaafcc080d3d5b0, type: 3}
@@ -11356,14 +11356,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1625183253}
   - component: {fileID: 1625183256}
-  - component: {fileID: 1625183255}
+  - component: {fileID: 1625183259}
+  - component: {fileID: 1625183258}
+  - component: {fileID: 1625183257}
   m_Layer: 5
   m_Name: Game Over Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1625183253
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11385,7 +11387,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1625183255
+--- !u!222 &1625183256
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625183252}
+  m_CullTransparentMesh: 1
+--- !u!114 &1625183257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625183252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6126ff2761127e9409d3053cf3410e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasGroupFader
+  canvasGroup: {fileID: 1625183258}
+  fadeDuration: 1
+--- !u!225 &1625183258
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625183252}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &1625183259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11398,14 +11434,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1093513652023269745, guid: cde7b828b0d28a24c8be2fb794243ac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11415,14 +11451,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1625183256
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625183252}
-  m_CullTransparentMesh: 1
 --- !u!4 &1627131149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1183789626204909638, guid: 7b679b216ee432a48ad1eae78cbcdf39, type: 3}
@@ -15304,7 +15332,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3387615143481603032, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.99
+      value: -32.5
       objectReference: {fileID: 0}
     - target: {fileID: 3387615143481603032, guid: f25093c483c616c46b8bc2ecd27c5091, type: 3}
       propertyPath: m_LocalPosition.y
