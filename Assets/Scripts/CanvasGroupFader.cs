@@ -28,7 +28,7 @@ public class CanvasGroupFader : MonoBehaviour
         while (elapsedTime < fadeDuration)
         {
             canvasGroup.alpha = Mathf.Lerp(start, end, elapsedTime / fadeDuration);
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime; //Unscaled time used to work when time is paused depending on game state
             yield return null;
         }
 
