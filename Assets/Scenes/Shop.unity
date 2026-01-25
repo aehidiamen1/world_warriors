@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 66200509}
   - component: {fileID: 66200511}
   - component: {fileID: 66200510}
+  - component: {fileID: 66200512}
   m_Layer: 5
   m_Name: Item (2)
   m_TagString: Untagged
@@ -274,6 +275,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66200508}
   m_CullTransparentMesh: 1
+--- !u!114 &66200512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66200508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c37293ff0bce1840b0392eb94cc946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemButton: {fileID: 5098089720722044503, guid: 94092525438b6e344b7c6431f65d4aa6, type: 3}
+  itemCost: 50
+  coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
 --- !u!1 &97706712
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 158585010}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390260803}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &158585010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,7 +1282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 320171694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66200512}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &320171694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,7 +2160,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 894880099}
   m_HandleRect: {fileID: 894880098}
   m_Direction: 2
-  m_Value: -0.0000036330462
+  m_Value: 0.37806872
   m_Size: 0.69117653
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2415,6 +2455,7 @@ GameObject:
   - component: {fileID: 570435996}
   - component: {fileID: 570435998}
   - component: {fileID: 570435997}
+  - component: {fileID: 570435999}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -2484,6 +2525,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570435995}
   m_CullTransparentMesh: 1
+--- !u!114 &570435999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570435995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c37293ff0bce1840b0392eb94cc946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemButton: {fileID: 3572186772629862745, guid: 95604b2d35c2ccd40b924a78a2f39881, type: 3}
+  itemCost: 10
+  coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
 --- !u!1 &575026793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,7 +2730,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597832894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570435999}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597832894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,8 +4058,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2101146223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.69117653}
+  m_AnchorMin: {x: 0, y: 0.11675649}
+  m_AnchorMax: {x: 1, y: 0.80793303}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5608,7 +5676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1327900863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093305232}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: PurchaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1327900863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5733,6 +5813,7 @@ GameObject:
   - component: {fileID: 1390260800}
   - component: {fileID: 1390260802}
   - component: {fileID: 1390260801}
+  - component: {fileID: 1390260803}
   m_Layer: 5
   m_Name: Item (3)
   m_TagString: Untagged
@@ -5802,6 +5883,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390260799}
   m_CullTransparentMesh: 1
+--- !u!114 &1390260803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390260799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c37293ff0bce1840b0392eb94cc946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemButton: {fileID: 1135212728812657359, guid: b8cc4df437414b1428315c571602ce69, type: 3}
+  itemCost: 100
+  coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
 --- !u!1 &1403178771
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,7 +6509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.50001, y: -64.99962}
+  m_AnchoredPosition: {x: 8.50001, y: -104.697205}
   m_SizeDelta: {x: 17, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552408171
@@ -8475,6 +8571,7 @@ GameObject:
   - component: {fileID: 2093305229}
   - component: {fileID: 2093305231}
   - component: {fileID: 2093305230}
+  - component: {fileID: 2093305232}
   m_Layer: 5
   m_Name: Item (1)
   m_TagString: Untagged
@@ -8544,6 +8641,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093305228}
   m_CullTransparentMesh: 1
+--- !u!114 &2093305232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093305228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c37293ff0bce1840b0392eb94cc946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemButton: {fileID: 8981491584274309352, guid: 97725899a2c880848b65f429103e6aeb, type: 3}
+  itemCost: 15
+  coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
 --- !u!1 &2101146222
 GameObject:
   m_ObjectHideFlags: 0
