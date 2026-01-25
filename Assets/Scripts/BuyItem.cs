@@ -4,6 +4,9 @@ public class BuyItem : MonoBehaviour
 {
     public GameObject itemButton;
 
+    [SerializeField] float itemCost;
+    [SerializeField] private FloatSO coinCountSO;
+
     public void PurchaseItem()
     {
         Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -18,5 +21,8 @@ public class BuyItem : MonoBehaviour
                 break;
             }
         }
+
+        // Deduct the cost from the player's coins
+        coinCountSO.Value -= itemCost;
     }
 }
