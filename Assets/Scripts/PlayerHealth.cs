@@ -66,6 +66,11 @@ public class PlayerHealth : MonoBehaviour
         }
         if (currentLives <= 0 && !isDead)
         {
+            Animator playerAnimator = GetComponent<Animator>();
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetTrigger("death");
+            }
             isDead = true;
             // Load game over screen
             Debug.Log("Game Over!");
