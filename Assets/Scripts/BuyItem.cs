@@ -8,7 +8,6 @@ public class BuyItem : MonoBehaviour
     [SerializeField] private FloatSO coinCountSO;
 
     bool canPurchase = false;
-
     public void PurchaseItem()
     {
         //Check if the player has enough coins to purchase the item
@@ -23,6 +22,8 @@ public class BuyItem : MonoBehaviour
             canPurchase = false;
             return;
         }
+        
+        bool itemStored = false;
 
         // If the player can purchase the item, add it to their inventory
         if (canPurchase)
@@ -36,12 +37,17 @@ public class BuyItem : MonoBehaviour
                 {
                     inventory.inventoryData.StoreItem(i, itemButton);
                     Instantiate(itemButton, inventory.slots[i].transform, false);
+                    itemStored = true;
                     break;
                 }
             }
 
-            // Deduct the cost from the player's coins
-            coinCountSO.Value -= itemCost;
+            if (itemStored)
+            {
+                // Deduct the cost from the player's coins
+                coinCountSO.Value -= itemCost;
+            }
+
         }
     }
 }
