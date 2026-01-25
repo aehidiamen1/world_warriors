@@ -25,6 +25,12 @@ public class CanvasGroupFader : MonoBehaviour
     {
         float elapsedTime = 0f;
 
+        if (end > start)
+        {
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        }
+    
         while (elapsedTime < fadeDuration)
         {
             canvasGroup.alpha = Mathf.Lerp(start, end, elapsedTime / fadeDuration);
@@ -33,5 +39,11 @@ public class CanvasGroupFader : MonoBehaviour
         }
 
         canvasGroup.alpha = end;
+
+        if (end < start)
+        {
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        }
     }   
 }
