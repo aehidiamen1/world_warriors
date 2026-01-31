@@ -10083,7 +10083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f937c566fb8e4504bb5004cba067ab0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  overworldSceneName: Overworld
+  sceneName: Overworld
 --- !u!70 &1474501532
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

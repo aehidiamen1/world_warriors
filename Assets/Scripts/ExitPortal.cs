@@ -3,14 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class ExitPortal : MonoBehaviour
 {
-    public string overworldSceneName = "Overworld";
+    public string sceneName;
     private bool playerInRange = false;
 
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene(overworldSceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 
