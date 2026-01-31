@@ -6,15 +6,23 @@ public class EnablePortal : MonoBehaviour
     [SerializeField] private Boss boss;
     private bool portalEnabled = false;
 
+    private MonoBehaviour exitPortalScript;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boss = GetComponent<Boss>();
+        exitPortalScript = GetComponent<ExitPortal>();
 
         // Hide the portal initially
         if (spriteRenderer != null)
         {            
             spriteRenderer.enabled = false;
+        }
+
+        if (exitPortalScript != null)
+        {
+            exitPortalScript.enabled = false;
         }
     }
 
@@ -27,6 +35,7 @@ public class EnablePortal : MonoBehaviour
         {
             spriteRenderer.enabled = true;
             portalEnabled = true;
+            exitPortalScript.enabled = true;
         }
     }
 }
