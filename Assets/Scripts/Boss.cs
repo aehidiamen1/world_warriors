@@ -31,6 +31,8 @@ public class Boss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
+    private bool bossDefeated = false;
+
     private void Awake()
     {
         // Set the boss health
@@ -42,10 +44,11 @@ public class Boss : MonoBehaviour
 
     public void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !bossDefeated)
         {
             Debug.Log("Boss defeated!");
             animator.SetTrigger("Defeated");
+            bossDefeated = true;
         }
     }
 
