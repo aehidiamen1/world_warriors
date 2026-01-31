@@ -2,15 +2,31 @@ using UnityEngine;
 
 public class EnablePortal : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] private Boss boss;
+    private bool portalEnabled = false;
+
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boss = GetComponent<Boss>();
+
+        // Hide the portal initially
+        if (spriteRenderer != null)
+        {            
+            spriteRenderer.enabled = false;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (portalEnabled)
+            return;
+
+        if (boss.currentHealth <= 0 && portalEnabled == false)
+        {
+            spriteRenderer.enabled = true;
+            portalEnabled = true;
+        }
     }
 }
