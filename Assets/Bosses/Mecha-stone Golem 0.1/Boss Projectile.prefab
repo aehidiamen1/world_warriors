@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328d725484eeecf41af57d955d9b0c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossProjectile
-  damage: 10
+  damage: 40
   speed: 6
   lifetime: 5
 --- !u!1 &8265326417084884518

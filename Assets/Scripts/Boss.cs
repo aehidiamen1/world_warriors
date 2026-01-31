@@ -40,6 +40,15 @@ public class Boss : MonoBehaviour
         originalColor = spriteRenderer.color;
     }
 
+    public void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Boss defeated!");
+            animator.SetTrigger("Defeated");
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         // Reduce health of the boss if damaged by the player
