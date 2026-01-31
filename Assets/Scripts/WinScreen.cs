@@ -9,6 +9,5 @@ public class WinScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         reset = true;
-        Time.timeScale = 1f;
     }
 }
