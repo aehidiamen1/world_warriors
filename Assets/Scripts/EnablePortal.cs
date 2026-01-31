@@ -11,7 +11,6 @@ public class EnablePortal : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boss = GetComponent<Boss>();
         exitPortalScript = GetComponent<ExitPortal>();
 
         // Hide the portal initially
