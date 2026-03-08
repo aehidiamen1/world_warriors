@@ -72,12 +72,12 @@ public class OverworldController : MonoBehaviour
 
             Vector3 endPos = point.position;
             float distance = Vector3.Distance(startPos, endPos);
-            float t = 0f;
+            float progress = 0f; // How far along the path the player is 
 
-            while (t < 1f)
+            while (progress < 1f)
             {
-                t += Time.deltaTime * moveSpeed / distance;
-                cursorTransform.position = Vector3.Lerp(startPos, endPos, t);
+                progress += Time.deltaTime * moveSpeed / distance;
+                cursorTransform.position = Vector3.Lerp(startPos, endPos, progress);
                 yield return null;
             }
 
@@ -88,13 +88,13 @@ public class OverworldController : MonoBehaviour
         Vector3 finalStart = startPos;
         Vector3 finalEnd = targetNode.transform.position;
         float finalDistance = Vector3.Distance(finalStart, finalEnd);
-        float finalT = 0f;
+        float finalMove = 0f;
 
         // Move to the final target node position
-        while (finalT < 1f)
+        while (finalMove < 1f)
         {
-            finalT += Time.deltaTime * moveSpeed / finalDistance;
-            cursorTransform.position = Vector3.Lerp(finalStart, finalEnd, finalT);
+            finalMove += Time.deltaTime * moveSpeed / finalDistance;
+            cursorTransform.position = Vector3.Lerp(finalStart, finalEnd, finalMove);
             yield return null;
         }
 
