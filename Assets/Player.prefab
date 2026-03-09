@@ -98,6 +98,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1012990002894280096
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143,6 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3331467284531206168, guid: 2f6598ee30fcb014590186d21fc2c820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +154,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6199498217069619289
 MonoBehaviour:
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 6
+  jumpForce: 5
   climbSpeed: 3
   jumpOffForce: 5
   coinCountSO: {fileID: 11400000, guid: fc6834ef0ceddaf44b25c2ee4b5d2ce0, type: 2}
@@ -182,6 +183,7 @@ MonoBehaviour:
   isSpeedBoosted: 0
   ProjectilePrefab: {fileID: 1982894986409419582, guid: a4dbb60247676d64e899947afce33238, type: 3}
   LaunchOffset: {fileID: 4302258559937488173}
+  boss: {fileID: 0}
 --- !u!50 &5621694229564321128
 Rigidbody2D:
   serializedVersion: 5
@@ -272,6 +274,7 @@ MonoBehaviour:
   - {fileID: 0}
   healthSO: {fileID: 11400000, guid: c195b1b65ed2b1240b7e10a0d8e518b6, type: 2}
   livesSO: {fileID: 11400000, guid: 3c634f231a0185a489c72f96b17457c9, type: 2}
+  gameOverScreen: {fileID: 0}
 --- !u!114 &7362065273839460633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +380,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6417117837289858399
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -422,6 +426,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10000
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -957587571, guid: 0fd5eee72976e9245bb3b8e13c4fd2cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -431,5 +436,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0

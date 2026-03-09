@@ -265,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator SpeedBoost(float multiplier, float duration)
     {
         isSpeedBoosted = true;
+        animator.SetBool("isRunning", true);
         // Save the player's current speed before changing it
         originalSpeed = speed;
         speed = originalSpeed * multiplier;
@@ -275,6 +276,7 @@ public class PlayerMovement : MonoBehaviour
         speed = originalSpeed;
 
         isSpeedBoosted = false;
+        animator.SetBool("isRunning", false);
     }
 
     public void SpawnProjectile()
