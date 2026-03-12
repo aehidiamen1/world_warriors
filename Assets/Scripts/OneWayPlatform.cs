@@ -14,7 +14,7 @@ public class OneWayPlatform : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            playerControls = collision.collider.GetComponent<PlayerOneWayPlatformControls>();
+            playerControls = collision.gameObject.GetComponent<PlayerOneWayPlatformControls>();
         }
     }
 
