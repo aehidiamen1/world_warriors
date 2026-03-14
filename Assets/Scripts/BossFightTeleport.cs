@@ -22,9 +22,9 @@ public class BossFightTeleport : MonoBehaviour
         if (portalSpawned) return;
         
         if (AllObelisksActivated())
-        {
-            portalSpawned = true;
+        {            
             ActivatePortal();
+            portalSpawned = true;
         }
     }
 
@@ -50,12 +50,11 @@ public class BossFightTeleport : MonoBehaviour
     private void ActivatePortal()
     {
         Debug.Log("All obelisks activated! Spawning portal...");
-        if (spriteRenderer != null) spriteRenderer.enabled = true;
-        
-
-        if (animator != null && spriteRenderer.enabled == true)
+        // Show the portal
+        if (animator != null && spriteRenderer != null)
         {
             animator.SetTrigger("Appear");
+            spriteRenderer.enabled = true;
         }
     }
 
