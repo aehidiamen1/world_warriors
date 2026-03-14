@@ -109,7 +109,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Respawn the player at the starting position
 
-        StartCoroutine(Respawn(2f));
+        StartCoroutine(Respawn(2.5f));
 
         UpdateLivesUI();
     }
@@ -132,6 +132,11 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Respawn(float delay)
     {
+        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        if (playerMovement != null)        {
+            playerMovement.enabled = false; // Disable player movement after player has died
+        }
+
         yield return new WaitForSeconds(delay);
         Animator playerAnimator = GetComponent<Animator>();
             if (playerAnimator != null)
@@ -139,6 +144,11 @@ public class PlayerHealth : MonoBehaviour
                 playerAnimator.SetBool("isDying", false);
             }
         transform.position = CheckpointPos;
+
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true; // Re-enable player movement after respawn
+        }
     }
 
     public void UpdateCheckpoint(Vector2 pos)
