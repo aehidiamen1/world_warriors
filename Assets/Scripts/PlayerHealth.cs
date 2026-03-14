@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
             Animator playerAnimator = GetComponent<Animator>();
             if (playerAnimator != null)
             {
-                playerAnimator.SetTrigger("death");
+                playerAnimator.SetBool("isDying", true);
             }
             isDead = true;
             // Load game over screen
@@ -85,6 +85,12 @@ public class PlayerHealth : MonoBehaviour
 
     void LoseLife()
     {
+        Animator playerAnimator = GetComponent<Animator>();
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetBool("isDying", true);
+            }
+        
         //Decrease lives by 1
         currentLives--;
         livesSO.Value = currentLives;
@@ -103,7 +109,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Respawn the player at the starting position
 
-        StartCoroutine(Respawn(1f));
+        StartCoroutine(Respawn(2f));
 
         UpdateLivesUI();
     }
@@ -127,6 +133,11 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator Respawn(float delay)
     {
         yield return new WaitForSeconds(delay);
+        Animator playerAnimator = GetComponent<Animator>();
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetBool("isDying", false);
+            }
         transform.position = CheckpointPos;
     }
 
@@ -140,12 +151,6 @@ public class PlayerHealth : MonoBehaviour
         //Checks if the player has fallen into a death zone
         if (collision.CompareTag("DeathZone"))
         {
-            // Play death animation
-            Animator playerAnimator = GetComponent<Animator>();
-            if (playerAnimator != null)
-            {
-                playerAnimator.SetTrigger("death");
-            }
             LoseLife();
         }
     }
