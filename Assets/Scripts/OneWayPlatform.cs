@@ -34,7 +34,7 @@ public class OneWayPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        platformEffector.rotationalOffset = 0f;
         playerControls = null;
+        platformEffector.rotationalOffset = 0f;
     }
 }

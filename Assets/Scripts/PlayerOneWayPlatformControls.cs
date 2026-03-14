@@ -9,7 +9,7 @@ public class PlayerOneWayPlatformControls : MonoBehaviour
     void Update()
     {
         //If the player presses the down key, allow them to fall through the platform
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
         {
             fallThrough = true;
         }
