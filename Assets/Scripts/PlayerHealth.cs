@@ -72,8 +72,9 @@ public class PlayerHealth : MonoBehaviour
                 playerAnimator.SetBool("isDying", true);
             }
             isDead = true;
-            // Delay before loading game over screen
-            StartCoroutine(DelayedGameOver(2.0f)); // Adjust the delay time as needed
+            // Load game over screen
+            Debug.Log("Game Over!");
+            gameOverScreen.GameOver();
         }
 
         livesSO.Value = currentLives;
@@ -150,13 +151,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    IEnumerator DelayedGameOver(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Debug.Log("Game Over!");
-        gameOverScreen.GameOver();
-    }
-
     public void UpdateCheckpoint(Vector2 pos)
     {
         CheckpointPos = pos;
@@ -173,14 +167,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        if (GetComponent<EnemyHealth>() != null && GetComponent<EnemyHealth>().enemyIsDead)
-        {
-            return; // Don't take damage if the enemy is already dead
-        }
-        else
-        { 
-            healthSO.Value -= damageAmount;
-        }
+        healthSO.Value -= damageAmount;
     }
 
     // Returns the current health value

@@ -17,7 +17,7 @@ public class Damage : MonoBehaviour
             {
                 playerAnimator.SetTrigger("hurt");
             }
-        
+
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
