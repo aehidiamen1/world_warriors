@@ -72,9 +72,8 @@ public class PlayerHealth : MonoBehaviour
                 playerAnimator.SetBool("isDying", true);
             }
             isDead = true;
-            // Load game over screen
-            Debug.Log("Game Over!");
-            gameOverScreen.GameOver();
+            // Delay before loading game over screen
+            StartCoroutine(DelayedGameOver(2.0f)); // Adjust the delay time as needed
         }
 
         livesSO.Value = currentLives;
@@ -149,6 +148,13 @@ public class PlayerHealth : MonoBehaviour
         {
             playerMovement.enabled = true; // Re-enable player movement after respawn
         }
+    }
+
+    IEnumerator DelayedGameOver(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Game Over!");
+        gameOverScreen.GameOver();
     }
 
     public void UpdateCheckpoint(Vector2 pos)
