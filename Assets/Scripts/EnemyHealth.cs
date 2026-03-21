@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     private enemy_patrol patrolScript;
     private Rigidbody2D rb;
-    private bool isDead = false;
+    public bool enemyIsDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         //Method doesn't run if enemy is already dead
-        if (isDead) return;
+        if (enemyIsDead) return;
 
         if (health < currentHealth)
         {
@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
     //Stop moving when the enemy dies
     private void Die()
         {
-            isDead = true;
+            enemyIsDead = true;
             animator.SetBool("isDead", true);
 
             if (patrolScript != null)

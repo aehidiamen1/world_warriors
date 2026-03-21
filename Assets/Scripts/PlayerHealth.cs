@@ -173,7 +173,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        healthSO.Value -= damageAmount;
+        if (GetComponent<EnemyHealth>() != null && GetComponent<EnemyHealth>().enemyIsDead)
+        {
+            return; // Don't take damage if the enemy is already dead
+        }
+        else
+        { 
+            healthSO.Value -= damageAmount;
+        }
     }
 
     // Returns the current health value
