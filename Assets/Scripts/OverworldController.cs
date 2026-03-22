@@ -22,9 +22,9 @@ public class OverworldController : MonoBehaviour
     // Finds a node by its name in the scene
     OverworldNode FindNodeByName(string nodeName)
     {
-        foreach (OverworldNode node in FindObjectsOfType<OverworldNode>())
+        foreach (OverworldNode node in FindObjectsByType<OverworldNode>(FindObjectsSortMode.None))
         {
-            if (node.name == nodeName)
+            if   (node.name == nodeName)
                 return node;
         }
         return null;
@@ -39,7 +39,7 @@ public class OverworldController : MonoBehaviour
         {
             if (i >= currentNode.connectionKeys.Count) continue;
 
-            // Moving to connected node
+            // Moving to the connected node
             if (Input.GetKeyDown(currentNode.connectionKeys[i]))
             {
                 var targetNode = currentNode.connectedNodes[i];
