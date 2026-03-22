@@ -7219,7 +7219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3653424663629079206, guid: 158fa0f6f275bf045b1929add1d29c4b, type: 3}
       propertyPath: remainingTime
-      value: 300
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 3653424663629079206, guid: 158fa0f6f275bf045b1929add1d29c4b, type: 3}
       propertyPath: GameOverScreen

@@ -43,6 +43,15 @@ public class ResetGameValues : MonoBehaviour
             GameOverScreen.reset = false;
             Debug.Log("Game values reset on returning to main menu after game is over.");
         }
+        else if (WinScreen.reset)
+        {
+            coinCountSO.Value = 0;
+            healthSO.Value = 0;
+            livesSO.Value = 0;
+            inventoryData.ClearAll();
+            WinScreen.reset = false;
+            Debug.Log("Game values reset on returning to main menu after game is over.");
+        }
         else
         {
             Debug.Log("Game values have already been reset. Skipping reset.");
